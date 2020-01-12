@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Editor\KinectCopyPluginDataHelper.cs" />
+    <Compile Include="Assets\Standard Assets\Editor\KinectVisualGestureBuilderPostBuildCopyPluginData.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
