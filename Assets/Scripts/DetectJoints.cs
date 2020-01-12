@@ -5,23 +5,23 @@ using Windows.Kinect;
 
 public class DetectJoints : MonoBehaviour
 {
-    [SerializeField] private GameObject BodySrcMg;
+    [SerializeField] private GameObject BodyMg;
     [SerializeField] private JointType TrackedJoint;
     [SerializeField] private float Multiplier = 10f;
-    private BodySourceManager BodyMg;
+    private BodySourceManager BodySrcMg;
     private Body[] bodies;
 
 
     void Start()
     {
-        if (BodySrcMg == null) Debug.Log("BodySrcMg is empty!");
-        else BodyMg = BodySrcMg.GetComponent<BodySourceManager>();
+        if (BodyMg == null) Debug.Log("BodyMg is empty!");
+        else BodySrcMg = BodyMg.GetComponent<BodySourceManager>();
     }
 
     private void Update()
     {
-        if (BodyMg == null) return;
-        bodies = BodyMg.GetData();
+        if (BodySrcMg == null) return;
+        bodies = BodySrcMg.GetData();
         if (bodies == null) return;
 
         foreach (var body in bodies)
