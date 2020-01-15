@@ -5,8 +5,8 @@ using Windows.Kinect;
 
 public class DetectJoints : MonoBehaviour
 {
-    [SerializeField] private GameObject BodyMg;
-    [SerializeField] private JointType TrackedJoint;
+    [SerializeField] private GameObject BodyMg = null;
+    [SerializeField] private JointType TrackedJoint = 0;
     [SerializeField] private float Multiplier = 10f;
     private BodySourceManager BodySrcMg;
     private Body[] bodies;

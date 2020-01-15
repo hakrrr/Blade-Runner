@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 85caa77cebb29d34cbebe46288734c59
+guid: 244dd3869cdd25046a6d1fb8aac046a0
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: DodgingL
+    second: NinjaRun
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -35,19 +35,19 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: DodgingL
+      name: NinjaRun
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 13
-      lastFrame: 40
+      firstFrame: 0
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
