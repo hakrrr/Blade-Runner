@@ -17,7 +17,7 @@ public class Gameloop : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(m_SpawnTime);
-            Instantiate(m_Obstacle, new Vector3(Lanes[Random.Range(0,2)], .3f, 200), Quaternion.identity);
+            Instantiate(m_Obstacle, new Vector3(Lanes[Random.Range(0,2)], .3f, 100), Quaternion.identity);
         }
     }
 

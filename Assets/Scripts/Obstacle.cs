@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private float m_Speed;
     private PlayerController m_Controller;
     private Rigidbody m_Rigidbody;
-    private Vector3 m_Velocity;
+    public Vector3 m_Velocity;
 
     private void OnDeath()
     {

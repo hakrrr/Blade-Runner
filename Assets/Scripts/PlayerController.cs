@@ -10,13 +10,18 @@ public class PlayerController : MonoBehaviour
 {
     private readonly string dodgeL = "Dodge_Right";
     private readonly string dodgeR = "Dodge_Left";
-    private readonly float MoveShift = 0.75f;
+    private readonly Vector3 ShiftPosR = new Vector3(1f, -4.4f, -3f);
+    private readonly Vector3 ShiftPosL = new Vector3(-1f, -4.4f, -3f);
+    private readonly Vector3 InitPos = new Vector3(0, -4.4f, -3f);
     
     [SerializeField] private GameObject GestureMg;
+    [SerializeField] private float m_MoveSpeed;
     private GestureSourceManager GestureSrcMg;
     private Transform m_Transform;
     private Animator m_Animator;
+    private CapsuleCollider m_CapsuleCollider;
     private Vector3 m_currPos;
+    private float m_timeCount = 0;
     private float m_velocity = 1f;
     private bool m_locked = false;
 
@@ -25,6 +30,7 @@ public class PlayerController : MonoBehaviour
         GestureSrcMg = GestureMg.GetComponent<GestureSourceManager>();
         m_Transform = GetComponent<Transform>();
         m_Animator = GetComponent<Animator>();
+        m_CapsuleCollider = GetComponent<CapsuleCollider>();
 
         if(GestureSrcMg != null)
         {
@@ -49,16 +55,22 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            m_velocity = (m_Animator.GetBool("Running") ? 1.75f : 1f);
-            m_Transform.position = Vector3.Slerp(m_currPos, new Vector3(0f, -4.4f, -3f), 0.2f);
+            m_timeCount = 0;
+            m_velocity = (m_Animator.GetBool("Running") ? 1.5f : 1f);
+            m_Transform.position = Vector3.MoveTowards(m_Transform.position, InitPos, 0.1f);
+            m_CapsuleCollider.center = Vector3.up;
             m_Animator.SetFloat("RunningMult", m_velocity);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision!");
     }
     public float Velocity
     {
         get { return m_velocity; }
     }
-
     private void GestureDetectedHandler(string name, float conf)
     {
         if (!m_locked &&m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && conf > 0.5f)
@@ -75,16 +87,16 @@ public class PlayerController : MonoBehaviour
     }
     private void Move(bool right)
     {
-        m_Transform.position = new Vector3(Mathf.Lerp(m_currPos.x, MoveShift * (right? 1 : -1), 0.1f), m_currPos.y, m_currPos.z);
+        m_Transform.position = Vector3.Lerp(InitPos, right? ShiftPosR : ShiftPosL, m_timeCount += Time.deltaTime * m_MoveSpeed);
     }
     private void Jump()
     {
-        m_Transform.position = new Vector3(m_currPos.x, Mathf.Lerp(m_currPos.y, -3.9f, 0.1f), m_currPos.z);
+        m_CapsuleCollider.center = Vector3.up * 2f;
     }
     private IEnumerator AnimationLock()
     {
         m_locked = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         m_locked = false;
     }
 

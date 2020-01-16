@@ -33,7 +33,6 @@ public class DetectJoints : MonoBehaviour
                 var pos = body.Joints[TrackedJoint].Position;
                 transform.position = new Vector3(pos.X * Multiplier, pos.Y * Multiplier);
             }
-
         }
     }
 

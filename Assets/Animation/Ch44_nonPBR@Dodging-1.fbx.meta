@@ -38,8 +38,8 @@ ModelImporter:
       name: DodgingL
       takeName: mixamo.com
       internalID: 0
-      firstFrame: 13
-      lastFrame: 40
+      firstFrame: 12
+      lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
