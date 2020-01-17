@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     private readonly string dodgeL = "Dodge_Right";
     private readonly string dodgeR = "Dodge_Left";
-    private readonly Vector3 ShiftPosR = new Vector3(1f, -4.4f, -3f);
-    private readonly Vector3 ShiftPosL = new Vector3(-1f, -4.4f, -3f);
+    private readonly Vector3 ShiftPosR = new Vector3(0.75f, -4.4f, -3f);
+    private readonly Vector3 ShiftPosL = new Vector3(-0.75f, -4.4f, -3f);
     private readonly Vector3 InitPos = new Vector3(0, -4.4f, -3f);
     
     [SerializeField] private GameObject GestureMg;
@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
             GestureSrcMg.GestureDetectedEvent += GestureDetectedHandler;
         }
     }
-
     private void FixedUpdate()
     {
         m_currPos = m_Transform.position;
@@ -62,7 +61,6 @@ public class PlayerController : MonoBehaviour
             m_Animator.SetFloat("RunningMult", m_velocity);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision!");
