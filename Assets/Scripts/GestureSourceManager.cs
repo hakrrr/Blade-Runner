@@ -43,7 +43,7 @@ public class GestureSourceManager : MonoBehaviour
             foreach (Gesture gesture in database.AvailableGestures)
             {
                 vgbFrameSource.AddGesture(gesture);
-                Debug.Log(gesture.Name + " successfully added to source");
+                //Debug.Log(gesture.Name + " successfully added to source");
             }
         }
     }

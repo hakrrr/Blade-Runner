@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\KinectView\Scripts\BodySourceManager.cs" />
-    <Compile Include="Assets\KinectView\Scripts\BodySourceView.cs" />
     <Compile Include="Assets\KinectView\Scripts\ColorSourceManager.cs" />
     <Compile Include="Assets\KinectView\Scripts\ColorSourceView.cs" />
     <Compile Include="Assets\KinectView\Scripts\DepthSourceManager.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\Blade.cs" />
     <Compile Include="Assets\Scripts\Cutting\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\Cutting\DrawBounds.cs" />
+    <Compile Include="Assets\Scripts\Cutting\HandSlice.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\Intersections.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\MeshCutter.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\MeshUtils.cs" />

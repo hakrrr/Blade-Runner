@@ -9,7 +9,6 @@ public class Gameloop : MonoBehaviour
 
     [SerializeField] private GameObject m_Obstacle;
     [SerializeField] private float m_SpawnTime;
-    [SerializeField] private float m_FloorSpeed = 5f;
 
     private float m_PlayerVel;
     private const float m_SpawnMax = 20f;
