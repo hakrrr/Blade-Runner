@@ -63,6 +63,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EzySlice\Framework\IntersectionResult.cs" />
+    <Compile Include="Assets\EzySlice\Framework\Intersector.cs" />
+    <Compile Include="Assets\EzySlice\Framework\Line.cs" />
+    <Compile Include="Assets\EzySlice\Framework\Plane.cs" />
+    <Compile Include="Assets\EzySlice\Framework\TextureRegion.cs" />
+    <Compile Include="Assets\EzySlice\Framework\Triangle.cs" />
+    <Compile Include="Assets\EzySlice\Framework\Triangulator.cs" />
+    <Compile Include="Assets\EzySlice\SlicedHull.cs" />
+    <Compile Include="Assets\EzySlice\Slicer.cs" />
+    <Compile Include="Assets\EzySlice\SlicerExtensions.cs" />
     <Compile Include="Assets\KinectView\Scripts\BodySourceManager.cs" />
     <Compile Include="Assets\KinectView\Scripts\ColorSourceManager.cs" />
     <Compile Include="Assets\KinectView\Scripts\ColorSourceView.cs" />
@@ -72,10 +82,8 @@
     <Compile Include="Assets\KinectView\Scripts\InfraredSourceManager.cs" />
     <Compile Include="Assets\KinectView\Scripts\InfraredSourceView.cs" />
     <Compile Include="Assets\KinectView\Scripts\MultiSourceManager.cs" />
-    <Compile Include="Assets\Scripts\Blade.cs" />
     <Compile Include="Assets\Scripts\Cutting\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\Cutting\DrawBounds.cs" />
-    <Compile Include="Assets\Scripts\Cutting\HandSlice.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\Intersections.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\MeshCutter.cs" />
     <Compile Include="Assets\Scripts\Cutting\MeshCutting\MeshUtils.cs" />
@@ -83,13 +91,15 @@
     <Compile Include="Assets\Scripts\Cutting\MouseSlice.cs" />
     <Compile Include="Assets\Scripts\Cutting\ObjectManager.cs" />
     <Compile Include="Assets\Scripts\Cutting\ScreenLineRenderer.cs" />
-    <Compile Include="Assets\Scripts\DetectJoints.cs" />
     <Compile Include="Assets\Scripts\Gameloop.cs" />
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\Ground.cs" />
     <Compile Include="Assets\Scripts\LookAt.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Slicing\Blade.cs" />
+    <Compile Include="Assets\Scripts\Slicing\DetectJoints.cs" />
+    <Compile Include="Assets\Scripts\Slicing\Slice.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
