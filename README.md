@@ -3,11 +3,11 @@ Microsoft Kinectv2 Game for Pc
 
 Credits for models and Frameworks:
 
-katana-model by person-x:
+Katana-model by person-x:
 https://sketchfab.com/3d-models/attack-blade-ver-20-91ff591422694726b9c6dda8fc9c55fb
 
-ezy-slice framework:
+Ezy-slice framework:
 https://github.com/DavidArayan/ezy-slice
 
-cutting mechanics advice:
+Cutting mechanics advice:
 https://www.youtube.com/watch?v=YGDzRVwmTgM&list=LLmurGN6AU3qB1fhrBq3hgQw&index=3&t=0s
