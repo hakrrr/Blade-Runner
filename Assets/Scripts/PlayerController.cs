@@ -13,33 +13,35 @@ public class PlayerController : MonoBehaviour
     private readonly Vector3 ShiftPosR = new Vector3(0.75f, -4.4f, -3f);
     private readonly Vector3 ShiftPosL = new Vector3(-0.75f, -4.4f, -3f);
     private readonly Vector3 InitPos = new Vector3(0, -4.4f, -3f);
-    
-    [SerializeField] private GameObject GestureMg;
-    [SerializeField] private float m_MoveSpeed;
+
+    [SerializeField] private GameObject m_GestureMg;
+    [SerializeField] private GameObject m_Hand;
+    [SerializeField] private Camera m_Cam;
+    [SerializeField] private float m_DodgeSpeed;
+
+
     private GestureSourceManager GestureSrcMg;
     private Transform m_Transform;
     private Animator m_Animator;
     private CapsuleCollider m_CapsuleCollider;
-    private Vector3 m_currPos;
     private float m_timeCount = 0;
     private float m_velocity = 1f;
     private bool m_locked = false;
+    private bool m_bladeMode = false;
 
     private void Start()
     {
-        GestureSrcMg = GestureMg.GetComponent<GestureSourceManager>();
+        GestureSrcMg = m_GestureMg.GetComponent<GestureSourceManager>();
         m_Transform = GetComponent<Transform>();
         m_Animator = GetComponent<Animator>();
         m_CapsuleCollider = GetComponent<CapsuleCollider>();
+        m_Hand.SetActive(false);
 
         if(GestureSrcMg != null)
-        {
             GestureSrcMg.GestureDetectedEvent += GestureDetectedHandler;
-        }
     }
     private void FixedUpdate()
     {
-        m_currPos = m_Transform.position;
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
             Move(false);
@@ -52,6 +54,12 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        //BladeMode
+        else if (Input.GetMouseButton(1))
+        {
+            m_Animator.SetBool("BladeMode", true);
+            BladeMode();
+        }
         else
         {
             m_timeCount = 0;
@@ -59,6 +67,9 @@ public class PlayerController : MonoBehaviour
             m_Transform.position = Vector3.MoveTowards(m_Transform.position, InitPos, 0.1f);
             m_CapsuleCollider.center = Vector3.up;
             m_Animator.SetFloat("RunningMult", m_velocity);
+            //BladeMode
+            m_Animator.SetBool("BladeMode", false);
+            EndBladeMode();
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -81,11 +92,25 @@ public class PlayerController : MonoBehaviour
             {
                 m_Animator.SetTrigger("DodgeR");
             }
+
+            //Todo: Draw Katana
         }
+    }
+    private void BladeMode()
+    {
+        m_Hand.SetActive(true);
+        Vector3 handPos = m_Cam.WorldToViewportPoint(m_Hand.transform.position);
+        m_Animator.SetFloat("x", handPos.x * 2 - 1);
+        m_Animator.SetFloat("y", handPos.y * 2 - 1);
+    }
+
+    private void EndBladeMode()
+    {
+        m_Hand.SetActive(false);
     }
     private void Move(bool right)
     {
-        m_Transform.position = Vector3.Lerp(InitPos, right? ShiftPosR : ShiftPosL, m_timeCount += Time.deltaTime * m_MoveSpeed);
+        m_Transform.position = Vector3.Lerp(InitPos, right? ShiftPosR : ShiftPosL, m_timeCount += Time.deltaTime * m_DodgeSpeed);
     }
     private void Jump()
     {
