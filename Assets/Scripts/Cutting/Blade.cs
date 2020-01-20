@@ -27,8 +27,8 @@ public class Blade : MonoBehaviour
     private void Awake()
     {
         handTf = trackedHand.GetComponent<Transform>();
-        bladeTrail = transform.GetChild(0).gameObject;
         detectJoints = GetComponent<DetectJoints>();
+        bladeTrail = transform.GetChild(0).gameObject;
 
         if (mouseDrawn)
         {

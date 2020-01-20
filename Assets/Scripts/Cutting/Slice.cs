@@ -10,7 +10,7 @@ public class Slice : MonoBehaviour
     [SerializeField] private Material crossMaterial;
     [SerializeField] private LayerMask layerMask;
 
-    private const float sliceRadius = 6f;
+    private const float sliceRadius = 50f;
     private void OnEnable()
     {
         bladeScript.OnLineDrawn += OnLineDrawn;
@@ -23,8 +23,8 @@ public class Slice : MonoBehaviour
     {
         Quaternion rotate = Quaternion.FromToRotation(Vector3.up, normalVec);
 
-        plane.transform.localRotation = rotate;
-        plane.transform.position = (end + start) / 2;
+        plane.localRotation = rotate;
+        plane.position = (end + start) / 2;
         plane.gameObject.SetActive(true);
     }
     private void OnLineDrawn(Vector3 A, Vector3 B, Vector3 dir)
