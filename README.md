@@ -1,5 +1,7 @@
 # ASG19-20
-Microsoft Kinectv2 Game for Pc
+Microsoft Kinect Game for Pc "Blade Runner"
+
+Simple Endless-Runner with cutting features via kinect sensors
 
 Credits for models and Frameworks:
 
