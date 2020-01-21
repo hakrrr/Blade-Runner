@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using DG.Tweening;
+using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
 /// The names for dodge are switched
@@ -139,6 +140,16 @@ public class PlayerController : MonoBehaviour
         DOVirtual.Float(m_CineComposer.m_TrackedObjectOffset.y, RotoffsetY, .4f, SetRotOffset);
         DOVirtual.Float(m_CineTransposer.m_FollowOffset.y, PosoffsetY, .4f, SetPosOffset);
         DOVirtual.Float(m_Cmvs.m_Lens.FieldOfView, FOV, .3f, SetFOV);
+        DOVirtual.Float(m_velocity, bladeMode ? .1f : 1f, .3f, (float x) => m_velocity = x);
+
+        //Post Processing
+        float currChrom = m_Cam.GetComponentInChildren<PostProcessVolume>().profile.
+            GetSetting<ChromaticAberration>().intensity.value;
+        float currVign = m_Cam.GetComponentInChildren<PostProcessVolume>().profile.
+            GetSetting<Vignette>().intensity.value;
+
+        DOVirtual.Float(currChrom, bladeMode ? .25f : .5f, .3f, SetChromatic);
+        DOVirtual.Float(currVign, bladeMode ? .6f : 0f, .3f, SetVignette);
     }
     private void SetRotOffset(float offset)
     {
@@ -151,6 +162,16 @@ public class PlayerController : MonoBehaviour
     private void SetFOV(float fov)
     {
         m_Cmvs.m_Lens.FieldOfView = fov;
+    }
+    private void SetChromatic(float chrom)
+    {
+        m_Cam.GetComponentInChildren<PostProcessVolume>().profile.GetSetting<ChromaticAberration>().
+            intensity.value = chrom;
+    }
+    private void SetVignette(float vign)
+    {
+        m_Cam.GetComponentInChildren<PostProcessVolume>().profile.GetSetting<Vignette>().
+            intensity.value = vign;
     }
     #endregion
 

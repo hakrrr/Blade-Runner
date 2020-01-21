@@ -36,13 +36,12 @@ public class Blade : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
         lastPosition = initPos;
-        bladeTrail.SetActive(false);
         cam = GetComponent<DetectJoints>().CameraTrack;
+        bladeTrail.SetActive(false);
     }
-
     private void Update()
     {
         float velocity = (handTf.position - lastPosition).magnitude * Time.deltaTime * 1000f;
