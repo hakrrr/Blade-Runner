@@ -17,30 +17,28 @@ public class Blade : MonoBehaviour
     private readonly Vector3 initPos = new Vector3(0, -20f, -10f);
 
     private Camera cam;
-    private GameObject bladeTrail;
+    //private GameObject bladeTrail;
     private DetectJoints detectJoints; 
     private Transform handTf;
     private Vector3 lastPosition;
     private bool bladeActive = false;
 
-
     private void Awake()
     {
         handTf = trackedHand.GetComponent<Transform>();
         detectJoints = GetComponent<DetectJoints>();
-        bladeTrail = transform.GetChild(0).gameObject;
+        //bladeTrail = transform.GetChild(0).gameObject;
 
         if (mouseDrawn)
         {
             detectJoints.enabled = false;
         }
     }
-
     private void OnEnable()
     {
         lastPosition = initPos;
         cam = GetComponent<DetectJoints>().CameraTrack;
-        bladeTrail.SetActive(false);
+        //bladeTrail.SetActive(false);
     }
     private void Update()
     {
@@ -75,9 +73,9 @@ public class Blade : MonoBehaviour
         Vector3 A = mouseDrawn ? Input.mousePosition : cam.WorldToScreenPoint(handTf.position);
 
         //Activate Blade; Bladetime == bladeDur
-        bladeTrail.SetActive(true);
+        //bladeTrail.SetActive(true);
         yield return new WaitForSeconds(bladeDur);
-        bladeTrail.SetActive(false);
+        //bladeTrail.SetActive(false);
         bladeActive = false;
 
 
