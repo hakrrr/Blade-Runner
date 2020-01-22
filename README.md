@@ -11,5 +11,5 @@ https://sketchfab.com/3d-models/attack-blade-ver-20-91ff591422694726b9c6dda8fc9c
 Ezy-slice framework:
 https://github.com/DavidArayan/ezy-slice
 
-Cutting mechanics advice:
-https://www.youtube.com/watch?v=YGDzRVwmTgM&list=LLmurGN6AU3qB1fhrBq3hgQw&index=3&t=0s
+Overall Guide:
+https://github.com/mixandjam/MGR-BladeMode
