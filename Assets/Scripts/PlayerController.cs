@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        //Vector3 a = m_Cam.ScreenToViewportPoint(Input.mousePosition);
+        //Vector3 b = m_Cam.ViewportToWorldPoint(new Vector3 (a.x, a.y, 14f));
+        //Debug.DrawLine(b, b+Vector3.right, Color.green, 0.4f);
+
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
             Move(false);
@@ -108,9 +112,9 @@ public class PlayerController : MonoBehaviour
     {
         m_Animator.SetBool("BladeMode", true);
         m_Hand.SetActive(true);
-        Vector3 handPos = m_Cam.WorldToViewportPoint(m_Hand.transform.position);
-        m_Animator.SetFloat("x", handPos.x * 2 - 1);
-        m_Animator.SetFloat("y", handPos.y * 2 - 1);
+        //Vector3 handPos = m_Cam.WorldToViewportPoint(m_Hand.transform.position);
+        //m_Animator.SetFloat("x", handPos.x * 2 - 1);
+        //m_Animator.SetFloat("y", handPos.y * 2 - 1);
         CameraZoom(true);
     }
     private void EndBladeMode()

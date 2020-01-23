@@ -12,7 +12,7 @@ public class Blade : MonoBehaviour
     public delegate void LineDrawnHandler(Vector3 begin, Vector3 end, Vector3 depth);
     public event LineDrawnHandler OnLineDrawn;
 
-    private const float minBladeSpeed = 1.4f;
+    private const float minBladeSpeed = .5f;
     private const float bladeDur = .2f;
     private readonly Vector3 initPos = new Vector3(0, -20f, -10f);
 
@@ -77,9 +77,7 @@ public class Blade : MonoBehaviour
         yield return new WaitForSeconds(bladeDur);
         //bladeTrail.SetActive(false);
         bladeActive = false;
-
-
-        Vector3 B = mouseDrawn ? Input.mousePosition : cam.WorldToScreenPoint(transform.position);
+        Vector3 B = mouseDrawn ? Input.mousePosition : cam.WorldToScreenPoint(handTf.position);
 
         //Invoke Event passing the Data to HandSlice
         var start = cam.ScreenPointToRay(A);

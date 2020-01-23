@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Windows.Kinect;
+using DG.Tweening;
 
 public class DetectJoints : MonoBehaviour
 {
@@ -11,8 +12,7 @@ public class DetectJoints : MonoBehaviour
     [SerializeField] private GameObject BodyMg = null;
     [SerializeField] private JointType TrackedJoint = 0;
     
-    private const float ScreenShift = 0.75f;
-    private Vector2 ScreenSize;
+    private const float ScreenShift = 0.4f;
     private BodySourceManager BodySrcMg;
     private Body[] bodies;
 
@@ -23,7 +23,6 @@ public class DetectJoints : MonoBehaviour
 
         else BodySrcMg = BodyMg.GetComponent<BodySourceManager>();
 
-        ScreenSize = new Vector2(Screen.width, Screen.height);
     }
 
     /// <summary>
@@ -50,7 +49,7 @@ public class DetectJoints : MonoBehaviour
                 float newX = (pos.X + ScreenShift) * Screen.width / (2f * ScreenShift),
                     newY = (pos.Y + ScreenShift) * Screen.height / (2f * ScreenShift);
                 Vector3 ScreenPos = CameraTrack.ScreenToWorldPoint(new Vector3(newX, newY, 1f));
-                transform.position = ScreenPos;
+                transform.DOMove(ScreenPos, 0.1f);
             }
 
         }
