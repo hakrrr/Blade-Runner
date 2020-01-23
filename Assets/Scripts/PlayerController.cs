@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private Transform m_Transform;
     private Animator m_Animator;
     private CapsuleCollider m_CapsuleCollider;
-    private ParticleSystem m_Warpstreak;
+    private ParticleSystem[] m_SpeedParticles;
 
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         m_CapsuleCollider = GetComponent<CapsuleCollider>();
         m_CineComposer = m_Cmvs.GetCinemachineComponent<CinemachineComposer>();
         m_CineTransposer = m_Cmvs.GetCinemachineComponent<CinemachineTransposer>();
-        m_Warpstreak = GetComponentInChildren<ParticleSystem>(true);
+        m_SpeedParticles = GetComponentsInChildren<ParticleSystem>();
     }
     private void Start()
     {
@@ -134,12 +134,15 @@ public class PlayerController : MonoBehaviour
     {
         float RotoffsetY = bladeMode ? 0.3f : 0f;
         float PosoffsetY = bladeMode ? 0.3f : 0f;
-        float FOV = bladeMode ? 15f : 33.4f;
+        float FOV = bladeMode ? 15.1f : 36.4f;
 
-        if (bladeMode)
-            m_Warpstreak.Stop();
-        else
-            m_Warpstreak.Play();
+        foreach (ParticleSystem p in m_SpeedParticles)
+        {
+            if (bladeMode)
+                p.Stop();
+            else if(!p.isPlaying)
+                p.Play();
+        }
 
         DOVirtual.Float(m_CineComposer.m_TrackedObjectOffset.y, RotoffsetY, .4f, SetRotOffset);
         DOVirtual.Float(m_CineTransposer.m_FollowOffset.y, PosoffsetY, .4f, SetPosOffset);
