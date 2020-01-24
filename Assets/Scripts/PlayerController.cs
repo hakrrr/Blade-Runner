@@ -87,7 +87,8 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision!");
+        if (other.gameObject.CompareTag("Obstacle"))
+            Debug.Log("Hit by Obstacle");
     }
     public float Velocity { get { return m_velocity; }}
     private void GestureDetectedHandler(string name, float conf)
@@ -112,9 +113,6 @@ public class PlayerController : MonoBehaviour
     {
         m_Animator.SetBool("BladeMode", true);
         m_Hand.SetActive(true);
-        //Vector3 handPos = m_Cam.WorldToViewportPoint(m_Hand.transform.position);
-        //m_Animator.SetFloat("x", handPos.x * 2 - 1);
-        //m_Animator.SetFloat("y", handPos.y * 2 - 1);
         CameraZoom(true);
     }
     private void EndBladeMode()

@@ -1,0 +1,326 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 436,
+      "type": "VEC3",
+      "max": [
+        0.60014265775680542,
+        1.6203974485397339,
+        0.48472636938095093
+      ],
+      "min": [
+        -0.60014265775680542,
+        1.5331209426715033E-20,
+        -0.48472636938095093
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 436,
+      "type": "VEC3",
+      "max": [
+        0.99991583824157715,
+        0.9695778489112854,
+        0.997858464717865
+      ],
+      "min": [
+        -0.9981764554977417,
+        -0.99035030603408813,
+        -0.9967494010925293
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 436,
+      "type": "VEC4",
+      "max": [
+        0.99454641342163086,
+        0.99406778812408447,
+        0.98264193534851074,
+        -1.0
+      ],
+      "min": [
+        -0.98450815677642822,
+        -0.99753224849700928,
+        -0.999977707862854,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 436,
+      "type": "VEC2",
+      "max": [
+        0.96775496006011963,
+        0.99000000953674316
+      ],
+      "min": [
+        0.0099999997764825821,
+        0.017387986183166504
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 436,
+      "type": "VEC2",
+      "max": [
+        0.96775496006011963,
+        0.99000000953674316
+      ],
+      "min": [
+        0.0099999997764825821,
+        0.017387986183166504
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5125,
+      "count": 1824,
+      "type": "SCALAR",
+      "max": [
+        435.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "UnityGLTF (2018.1.5f1)",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Unity2Skfb.bin",
+      "byteLength": 31712
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 5232
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5232,
+      "byteLength": 5232
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10464,
+      "byteLength": 6976
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17440,
+      "byteLength": 3488
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 20928,
+      "byteLength": 3488
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 24416,
+      "byteLength": 7296
+    }
+  ],
+  "images": [
+    {
+      "uri": "21090_Crystal_Emission.png",
+      "name": "Crystal_Emission"
+    },
+    {
+      "uri": "62202_Crystal_Normal.png",
+      "name": "Crystal_Normal"
+    },
+    {
+      "uri": "21092_Crystal_Albedo.png",
+      "name": "Crystal_Albedo"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "roughnessFactor": 0.060000002384185791
+      },
+      "normalTexture": {
+        "index": 1
+      },
+      "emissiveTexture": {
+        "index": 0
+      },
+      "emissiveFactor": [
+        2.0,
+        1.32559109,
+        0.0
+      ],
+      "name": "Crystal_PBR"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicFactor": 0.0
+      },
+      "emissiveTexture": {
+        "index": 2
+      },
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "name": "Crystal_Self"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4
+          },
+          "indices": 5,
+          "material": 0
+        }
+      ],
+      "name": "Crystal"
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ],
+      "name": "Crystal (1)"
+    }
+  ],
+  "nodes": [
+    {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        0.0,
+        1.0,
+        10.0
+      ],
+      "name": "Main Camera"
+    },
+    {
+      "rotation": [
+        0.408217877,
+        -0.234569684,
+        -0.109381631,
+        -0.8754261
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        0.99999994
+      ],
+      "translation": [
+        0.0,
+        3.0,
+        0.0
+      ],
+      "name": "Directional Light"
+    },
+    {
+      "mesh": 0,
+      "rotation": [
+        2.18556941E-08,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "name": "Crystal"
+    },
+    {
+      "mesh": 1,
+      "rotation": [
+        2.18556941E-08,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        -0.7,
+        0.0,
+        -1.13070495E-08
+      ],
+      "name": "Crystal (1)"
+    }
+  ],
+  "samplers": [
+    {
+      "minFilter": 9729,
+      "WrapS": 33071,
+      "WrapT": 33071
+    },
+    {
+      "minFilter": 9729
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "name": "Unity2Skfb"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0,
+      "name": "Crystal_Emission"
+    },
+    {
+      "sampler": 1,
+      "source": 1,
+      "name": "Crystal_Normal"
+    },
+    {
+      "sampler": 1,
+      "source": 2,
+      "name": "Crystal_Albedo"
+    }
+  ]
+}

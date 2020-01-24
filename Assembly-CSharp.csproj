@@ -111,9 +111,11 @@
     <Compile Include="Assets\Scripts\Cutting\Blade.cs" />
     <Compile Include="Assets\Scripts\Cutting\DetectJoints.cs" />
     <Compile Include="Assets\Scripts\Cutting\Slice.cs" />
+    <Compile Include="Assets\Scripts\DeathZone.cs" />
     <Compile Include="Assets\Scripts\Gameloop.cs" />
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\Ground.cs" />
+    <Compile Include="Assets\Scripts\Hull.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\OldCut\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\OldCut\DrawBounds.cs" />
@@ -157,6 +159,7 @@
     <None Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
     <None Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+    <None Include="Assets\Planets\shader\two_side_shader.shader" />
     <None Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
     <Reference Include="Unity.Timeline.Editor">

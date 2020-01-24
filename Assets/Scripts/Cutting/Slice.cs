@@ -22,7 +22,7 @@ public class Slice : MonoBehaviour
     ParticleSystem[] bladeParticles;
 
 
-    private const float sliceRadius = 50f;
+    private const float sliceRadius = 25f;
     private void Awake()
     {
         bladeParticles = bladeParticleParent.GetComponentsInChildren<ParticleSystem>();
@@ -86,14 +86,13 @@ public class Slice : MonoBehaviour
     private void AddHullComp(GameObject target)
     {
         target.layer = 8;
+        MeshCollider collider = target.AddComponent<MeshCollider>();
+        collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;
-        MeshCollider collider = target.AddComponent<MeshCollider>();
-        collider.convex = true;
-
-        rb.AddExplosionForce(10, target.transform.position, 20);
-        //rb.velocity = Vector3.back;
+        rb.AddExplosionForce(20, target.transform.position, 20);
+        target.AddComponent<Hull>();
     }
     private void BladeEffect()
     {

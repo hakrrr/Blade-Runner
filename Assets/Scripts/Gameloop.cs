@@ -5,8 +5,6 @@ using UnityEngine;
 public class Gameloop : MonoBehaviour
 {
 
-    private readonly float []Lanes = new float [2] {-10f, 10f};
-
     [SerializeField] private GameObject m_Obstacle;
     [SerializeField] private float m_SpawnTime;
 
@@ -18,7 +16,8 @@ public class Gameloop : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(m_SpawnTime);
-            Instantiate(m_Obstacle, new Vector3(Lanes[Random.Range(0,2)], .3f, 100), Quaternion.identity);
+            Vector3 spawnPos = new Vector3(Random.Range(-3.3f, 4.4f), Random.Range(-3.5f, -1f), 100f);
+            Instantiate(m_Obstacle, spawnPos, Quaternion.identity);
         }
     }
 
