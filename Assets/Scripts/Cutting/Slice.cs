@@ -87,7 +87,14 @@ public class Slice : MonoBehaviour
     {
         target.layer = 8;
         MeshCollider collider = target.AddComponent<MeshCollider>();
-        collider.convex = true;
+        try
+        {
+            collider.convex = true;
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
         Rigidbody rb = target.AddComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;

@@ -1422,34 +1422,11 @@ MonoBehaviour:
   m_Name: PostEffect Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 5643521715505396685}
   - {fileID: -5648695485920258559}
   - {fileID: -2071614245312232358}
   - {fileID: 7683910854883238581}
   - {fileID: -6590071939859805340}
   - {fileID: -2273034878026228743}
---- !u!114 &5643521715505396685
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
-  m_Name: MotionBlur
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  shutterAngle:
-    overrideState: 1
-    value: 260
-  sampleCount:
-    overrideState: 1
-    value: 16
 --- !u!114 &7683910854883238581
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1486,7 +1463,7 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.4764151, g: 0.930926, b: 1, a: 1}
+    value: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   fastMode:
     overrideState: 0
     value: 0

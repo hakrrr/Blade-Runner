@@ -115,8 +115,9 @@
     <Compile Include="Assets\Scripts\Gameloop.cs" />
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\Ground.cs" />
-    <Compile Include="Assets\Scripts\Hull.cs" />
-    <Compile Include="Assets\Scripts\Obstacle.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Crystal.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Hull.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\Meteor.cs" />
     <Compile Include="Assets\Scripts\OldCut\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\OldCut\DrawBounds.cs" />
     <Compile Include="Assets\Scripts\OldCut\MeshCutting\Intersections.cs" />
