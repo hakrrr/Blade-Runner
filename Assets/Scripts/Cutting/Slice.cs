@@ -4,36 +4,53 @@ using UnityEngine;
 using EzySlice;
 using Cinemachine;
 using DG.Tweening;
+using TMPro;
 
 public class Slice : MonoBehaviour
 {
-    [SerializeField] private Transform plane;
-    [SerializeField] private Blade bladeScript;
+
     [SerializeField] private Material crossMaterial;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject cineCamera;
-    [SerializeField] private GameObject bladeParticleParent;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Animator animator;
-
+    
+    int hitCounter = 0;
     const float bTDIst = 8f;
     bool animLocked = false;
+    GameObject bladeParticleParent;
+    GameObject hitTextObj;
+    Transform plane;
+    Transform parent;
+    Blade bladeScript;
     Vector3 handPos = Vector3.zero;
+    TextMeshProUGUI hitCounterText;
     ParticleSystem[] bladeParticles;
+
 
 
     private const float sliceRadius = 25f;
     private void Awake()
     {
+        parent = transform.parent;
+        plane = parent.Find("CutPlane");
+        bladeScript = GetComponent<Blade>();
+        bladeParticleParent = parent.Find("BladeParticleParent").gameObject;
         bladeParticles = bladeParticleParent.GetComponentsInChildren<ParticleSystem>();
+        hitTextObj = parent.Find("Canvas").Find("HitCounter").gameObject;
+        hitCounterText = hitTextObj.GetComponent<TextMeshProUGUI>();
     }
     private void OnEnable()
     {
+        hitCounter = 0;
+        hitCounterText.SetText("");
+        hitTextObj.GetComponent<Animator>().SetTrigger("Visible");
         bladeScript.OnLineDrawn += OnLineDrawn;
     }
     private void OnDisable()
     {
         bladeScript.OnLineDrawn -= OnLineDrawn;
+        hitTextObj.GetComponent<Animator>().SetTrigger("Fade");
     }
     private void Update()
     {
@@ -72,6 +89,8 @@ public class Slice : MonoBehaviour
 
         foreach(Collider c in hits)
         {
+            ++hitCounter;
+            c.GetComponent<MeshCollider>().convex = true;
             SlicedHull hull = SliceObject(c.gameObject, crossMaterial);
             if(hull != null)
             {
@@ -85,21 +104,25 @@ public class Slice : MonoBehaviour
     }
     private void AddHullComp(GameObject target)
     {
-        target.layer = 8;
         MeshCollider collider = target.AddComponent<MeshCollider>();
-        try
+        Vector3 bounds = collider.bounds.size;
+
+        collider.cookingOptions = MeshColliderCookingOptions.CookForFasterSimulation;
+
+        if (bounds.x / 2 <= 0.1 || bounds.y / 2 <= 0.1 || bounds.z / 2 <= 0.1)
         {
-            collider.convex = true;
+            Destroy(target);
+            return;
         }
-        catch (System.Exception e)
-        {
-            Debug.Log(e.Message);
-        }
+
+        collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;
         rb.AddExplosionForce(20, target.transform.position, 20);
+        target.layer = 8;
         target.AddComponent<Hull>();
+        Destroy(target, 60f);
     }
     private void BladeEffect()
     {
@@ -150,6 +173,8 @@ public class Slice : MonoBehaviour
         DOVirtual.Float(end.y, handPos.y * 2 - 1, 0.1f, (float y) => animator.SetFloat("y", y));
 
         animLocked = false;
+        if(hitCounter > 0)
+            hitCounterText.SetText(hitCounter + " Hits");
     }
     private SlicedHull SliceObject(GameObject target, Material crossM)
     {

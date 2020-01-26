@@ -23,20 +23,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera m_Cmvs;
     [SerializeField] private float m_DodgeSpeed;
 
-
     private GestureSourceManager GestureSrcMg;
     private Transform m_Transform;
     private Animator m_Animator;
     private CapsuleCollider m_CapsuleCollider;
     private ParticleSystem[] m_SpeedParticles;
-
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
 
     private float m_timeCount = 0;
     private float m_velocity = 1f;
     private bool m_locked = false;
-
 
     private void Awake()
     {
@@ -57,10 +54,6 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //Vector3 a = m_Cam.ScreenToViewportPoint(Input.mousePosition);
-        //Vector3 b = m_Cam.ViewportToWorldPoint(new Vector3 (a.x, a.y, 14f));
-        //Debug.DrawLine(b, b+Vector3.right, Color.green, 0.4f);
-
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
             Move(false);

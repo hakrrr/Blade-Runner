@@ -18,7 +18,7 @@ public class Blade : MonoBehaviour
 
     private Camera cam;
     //private GameObject bladeTrail;
-    private DetectJoints detectJoints; 
+    private DetectJoints detectJoints;
     private Transform handTf;
     private Vector3 lastPosition;
     private bool bladeActive = false;
@@ -28,7 +28,6 @@ public class Blade : MonoBehaviour
         handTf = trackedHand.GetComponent<Transform>();
         detectJoints = GetComponent<DetectJoints>();
         //bladeTrail = transform.GetChild(0).gameObject;
-
         if (mouseDrawn)
         {
             detectJoints.enabled = false;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8361198627953826849}
   - component: {fileID: 7396013193691888327}
   - component: {fileID: 7508257628800695491}
+  - component: {fileID: 4812643859524622269}
   m_Layer: 8
   m_Name: Crystal
   m_TagString: Untagged
@@ -124,3 +125,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 20
+--- !u!95 &4812643859524622269
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8361198627953826848}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc4393c42a76b674f832571c271cd794, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
