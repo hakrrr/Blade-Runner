@@ -63,16 +63,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Editor\ImageEffects\BloomEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Editor\ImageEffects\SunShaftsEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\AntiAliasing\Editor\AntiAliasingEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\AntiAliasing\Editor\IAntiAliasingEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\AntiAliasing\FXAA\Editor\FXAAEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\AntiAliasing\SMAA\Editor\SMAAEditor.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\Common\Editor\EditorGUIHelper.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\Common\Editor\FieldFinder.cs" />
-    <Compile Include="Assets\AHProxy\PlanetShader\DemoScene\Standard Assets\Effects\Common\Editor\MinDrawer.cs" />
+    <Compile Include="Assets\CyberCity\Editor\SettingsPrompt.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\BloomModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\FogModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\GrainModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PostProcessingFactory.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PostProcessingInspector.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PostProcessingModelEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PostProcessingMonitor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\CurveEditor.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\EditorResources.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\FxStyles.cs" />
+    <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
@@ -138,12 +163,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools">
-      <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/Unity.TerrainTools.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TerrainTools.Editor">
-      <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/Unity.TerrainTools.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

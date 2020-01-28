@@ -44,7 +44,7 @@ MonoBehaviour:
     value: 1
   gradingMode:
     overrideState: 1
-    value: 0
+    value: 1
   externalLut:
     overrideState: 0
     value: {fileID: 0}
@@ -79,19 +79,19 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -0
+    value: -2.9
   tint:
     overrideState: 1
-    value: 0
+    value: 15.9
   colorFilter:
     overrideState: 1
-    value: {r: 1.319508, g: 1.319508, b: 1.319508, a: 1}
+    value: {r: 1.3295448, g: 1.3295448, b: 1.3295448, a: 1}
   hueShift:
     overrideState: 0
-    value: 13
+    value: 53.8
   saturation:
     overrideState: 0
-    value: 8.9
+    value: -46.53
   brightness:
     overrideState: 1
     value: 15
@@ -99,8 +99,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 0
-    value: -1
+    overrideState: 1
+    value: 15.4
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -129,14 +129,14 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 0.8053683, z: 0.98803025, w: 0}
   gamma:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.9851958, y: 0.9443577, z: 1, w: 0}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.8491179, y: 0.93319666, z: 1, w: 0}
   masterCurve:
     overrideState: 0
     value:
@@ -1364,7 +1364,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0
+    value: 0.28
   smoothness:
     overrideState: 1
     value: 0.26
@@ -1399,7 +1399,7 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 8
+    value: 7.13
   aperture:
     overrideState: 1
     value: 10.6
@@ -1408,7 +1408,7 @@ MonoBehaviour:
     value: 105
   kernelSize:
     overrideState: 1
-    value: 0
+    value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b77c5407dc277943b591ade9e6b18c5, type: 3}
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1480,13 +1480,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.67
+    value: 11.09
   threshold:
     overrideState: 1
-    value: 0.9
+    value: 0.67
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 1
   clamp:
     overrideState: 0
     value: 65472
@@ -1495,13 +1495,13 @@ MonoBehaviour:
     value: 6.09
   anamorphicRatio:
     overrideState: 0
-    value: 0
+    value: -1
   color:
     overrideState: 1
-    value: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+    value: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
   fastMode:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}

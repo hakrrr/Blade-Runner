@@ -1,0 +1,12 @@
+Terrain A:
+offset: +117.6
+Terrain B:
+offset: +101.248
+Terrain C:
+offset: -57.35
+Terrain D:
+offset: +112.492
+Terrain E:
+offset: +15.02
+Terrain F:
+offset: +101.36
