@@ -1,5 +1,5 @@
 # ASG19-20
-Microsoft Kinect Game for Pc: "Blade Runner"
+Microsoft Kinect Game for PC: "Blade Runner"
 
 Simple Endless-Runner with cutting features via kinect sensors
 
@@ -13,3 +13,6 @@ https://github.com/DavidArayan/ezy-slice
 
 Overall Guide:
 https://github.com/mixandjam/MGR-BladeMode
+
+CyperCity Model:
+https://assetstore.unity.com/packages/3d/environments/sci-fi/cyber-city-120137
