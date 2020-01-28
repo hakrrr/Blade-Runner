@@ -3,6 +3,8 @@ Microsoft Kinect Game for PC: "Blade Runner"
 
 Simple Endless-Runner with cutting features via kinect sensors
 
+This project requires the CyperCity Model form the Unity asset store. Link can be found below.
+
 Credits for models and Frameworks:
 
 Katana-model by person-x:
