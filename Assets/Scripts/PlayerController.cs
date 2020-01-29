@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
         DOVirtual.Float(m_CineComposer.m_TrackedObjectOffset.y, RotoffsetY, .4f, SetRotOffset);
         DOVirtual.Float(m_CineTransposer.m_FollowOffset.y, PosoffsetY, .4f, SetPosOffset);
         DOVirtual.Float(m_Cmvs.m_Lens.FieldOfView, FOV, .3f, SetFOV);
-        DOVirtual.Float(m_velocity, bladeMode ? .1f : 1f, .3f, (float x) => m_velocity = x);
+        DOVirtual.Float(m_velocity, bladeMode ? .05f : 1f, .3f, (float x) => m_velocity = x);
 
         //Post Processing
         float currChrom = m_Cam.GetComponentInChildren<PostProcessVolume>().profile.

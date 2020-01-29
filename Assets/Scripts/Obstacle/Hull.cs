@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Hull : MonoBehaviour
 {
     private PlayerController pController;
@@ -12,6 +13,7 @@ public class Hull : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
         pController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     void Start()

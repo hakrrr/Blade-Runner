@@ -162,6 +162,7 @@
     <Compile Include="Assets\Scripts\OldCut\ObjectManager.cs" />
     <Compile Include="Assets\Scripts\OldCut\ScreenLineRenderer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\RemoveCollider.cs" />
     <None Include="Assets\CyberCity\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

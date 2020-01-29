@@ -89,9 +89,16 @@ public class Slice : MonoBehaviour
 
         foreach(Collider c in hits)
         {
+            if (c.CompareTag("Parent"))
+            {
+                for (int i = 0; i < c.transform.childCount; ++i)
+                {
+                    c.transform.GetChild(i).gameObject.AddComponent<Hull>();
+                }
+                continue;
+            }
             ++hitCounter;
             SlicedHull hull = SliceObject(c.gameObject, crossMaterial);
-
             if (hull != null)
             {
                 c.gameObject.transform.parent = null;
@@ -118,9 +125,9 @@ public class Slice : MonoBehaviour
 
         collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();
-        //rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;
         rb.AddExplosionForce(10, target.transform.position, 20f);
+        //rb.interpolation = RigidbodyInterpolation.Interpolate;
         target.layer = 8;
         target.AddComponent<Hull>();
         Destroy(target, 10f);

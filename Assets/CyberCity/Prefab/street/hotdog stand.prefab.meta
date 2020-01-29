@@ -1,8 +1,9 @@
 fileFormatVersion: 2
 guid: fa9b05566d19f1f49a52a3d8d45605d1
-timeCreated: 1527781410
-licenseType: Store
-NativeFormatImporter:
+labels:
+- Road
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
