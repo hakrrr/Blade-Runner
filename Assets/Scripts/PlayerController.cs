@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
     {
         float RotoffsetY = bladeMode ? 0.3f : 0f;
         float PosoffsetY = bladeMode ? 0.3f : 0f;
-        float FOV = bladeMode ? 15.1f : 36.4f;
+        float FOV = bladeMode ? 15.1f : 34.4f;
 
         foreach (ParticleSystem p in m_SpeedParticles)
         {

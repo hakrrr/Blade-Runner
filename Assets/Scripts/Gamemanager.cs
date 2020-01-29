@@ -55,13 +55,17 @@ public class Gamemanager : MonoBehaviour
     }
     private IEnumerator GroundSpawner()
     {
+        int counter = 0;
         while (true)
         {
+            if (counter == 30)
+                maxSpawnTime /= 2;
             yield return new WaitWhile(() => hand.activeSelf);
             yield return new WaitForSeconds(Random.Range(0f, maxSpawnTime));
             Vector3 spawnPos = new Vector3(Random.Range(-3.3f, 4.4f), -4.7f, 100f);
             Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360f), 0);
             Instantiate(groundObstacle[Random.Range(0, groundObstacle.Length)], spawnPos, spawnRot);
+            ++counter;
         }
     }
     private IEnumerator AirSpawner()

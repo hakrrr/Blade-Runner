@@ -118,9 +118,9 @@ public class Slice : MonoBehaviour
 
         collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();
-        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        //rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;
-        rb.AddExplosionForce(10, target.transform.position, 20);
+        rb.AddExplosionForce(10, target.transform.position, 20f);
         target.layer = 8;
         target.AddComponent<Hull>();
         Destroy(target, 10f);
