@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4462857360773592021}
+  - component: {fileID: 3952655665816995315}
+  - component: {fileID: 8193444724398094577}
   m_Layer: 0
   m_Name: SphereWheel
   m_TagString: Untagged
@@ -33,6 +35,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &3952655665816995315
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561766252292872675}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8193444724398094577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561766252292872675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 20
 --- !u!1 &6503757084356803329
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,6 +76,7 @@ GameObject:
   - component: {fileID: 6503757084356803341}
   - component: {fileID: 6503757084356803342}
   - component: {fileID: 6503757084356803343}
+  - component: {fileID: 1664491344845998923}
   m_Layer: 0
   m_Name: Sphere002
   m_TagString: Untagged
@@ -129,6 +161,20 @@ MonoBehaviour:
   SwitchTime: 0.05
   SwitchModes: 0
   MatId: 0
+--- !u!64 &1664491344845998923
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503757084356803329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 592eab7a882729b4f8e90f694ba62f26, type: 3}
 --- !u!1 &6504451402819441786
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +186,7 @@ GameObject:
   - component: {fileID: 6508090679371368180}
   - component: {fileID: 6501503593648311358}
   - component: {fileID: 6490282372365681142}
+  - component: {fileID: 4155308992231901966}
   m_Layer: 0
   m_Name: car wheel (2)
   m_TagString: Untagged
@@ -207,3 +254,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4155308992231901966
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504451402819441786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 3207617b109a7cb48892ecd2e9e532ed, type: 3}

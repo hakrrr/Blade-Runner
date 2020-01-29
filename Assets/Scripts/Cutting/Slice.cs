@@ -123,7 +123,7 @@ public class Slice : MonoBehaviour
         rb.AddExplosionForce(10, target.transform.position, 20);
         target.layer = 8;
         target.AddComponent<Hull>();
-        Destroy(target, 60f);
+        Destroy(target, 10f);
     }
     private void BladeEffect()
     {

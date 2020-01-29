@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+[RequireComponent(typeof(Rigidbody))]
 public class GroundObst : MonoBehaviour
 {
 
@@ -10,9 +11,12 @@ public class GroundObst : MonoBehaviour
     private Vector3 m_Velocity;
     private PlayerController m_Controller;
     private Rigidbody m_Rigidbody;
+
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_Rigidbody.freezeRotation = true;
+        m_Rigidbody.useGravity = false;
         m_Velocity = Vector3.back * m_Speed;
         m_Controller = GameObject.Find("Player").GetComponent<PlayerController>();
     }
