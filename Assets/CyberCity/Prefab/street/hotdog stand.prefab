@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4807012348706230}
   - component: {fileID: 33826298751519810}
   - component: {fileID: 23414296059172516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4471172919468904}
   - component: {fileID: 33815638732105592}
   - component: {fileID: 23397723769341744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mustard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4081241331046696}
   - component: {fileID: 33812044474697648}
   - component: {fileID: 23367004093539028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sausage b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 4105650163354640}
   - component: {fileID: 33432373459300698}
   - component: {fileID: 23317713318848366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 4995630453710920}
   - component: {fileID: 33884629049234632}
   - component: {fileID: 23659481049275760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box159
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 4782200783221528}
   - component: {fileID: 33103093778014338}
   - component: {fileID: 23481150066081200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 4956844834588268}
   - component: {fileID: 198206882275384892}
   - component: {fileID: 199632440605579266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: smoke steam
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -5234,7 +5234,7 @@ GameObject:
   - component: {fileID: 4280531066941654}
   - component: {fileID: 33009856500731982}
   - component: {fileID: 23505798138769820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box152
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5313,7 +5313,7 @@ GameObject:
   - component: {fileID: 4204939441734810}
   - component: {fileID: 33301585135749738}
   - component: {fileID: 23640351097769230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: strlamp 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5391,7 +5391,7 @@ GameObject:
   - component: {fileID: 4214270376315416}
   - component: {fileID: 33111626026365580}
   - component: {fileID: 23615757779951858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ketchup (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5469,7 +5469,7 @@ GameObject:
   - component: {fileID: 4870077064558190}
   - component: {fileID: 33122763227220072}
   - component: {fileID: 23882572933787110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object122
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5546,10 +5546,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4057858944839622}
   - component: {fileID: 252192013232008184}
-  - component: {fileID: 8928939231610922394}
-  m_Layer: 0
+  - component: {fileID: 119021190599479382}
+  - component: {fileID: 7786274821932081537}
+  m_Layer: 8
   m_Name: hotdog stand
-  m_TagString: Untagged
+  m_TagString: Parent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5604,7 +5605,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8928939231610922394
+--- !u!114 &119021190599479382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5617,6 +5618,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 20
+--- !u!65 &7786274821932081537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457953640156240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4141264, y: 3.7702343, z: 1.756156}
+  m_Center: {x: -0.075422764, y: 1.3851167, z: 0.16602457}
 --- !u!1 &1571608904950426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5628,7 +5642,7 @@ GameObject:
   - component: {fileID: 4766574535947724}
   - component: {fileID: 33969334000191886}
   - component: {fileID: 23044619581594902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Object121
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5799,7 +5813,7 @@ GameObject:
   - component: {fileID: 4796675824076538}
   - component: {fileID: 33012568149539956}
   - component: {fileID: 23689829490346502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drink (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5877,7 +5891,7 @@ GameObject:
   - component: {fileID: 4205392341910910}
   - component: {fileID: 33422070236754424}
   - component: {fileID: 23482054503486826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drink (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5955,7 +5969,7 @@ GameObject:
   - component: {fileID: 4290341611818002}
   - component: {fileID: 33027119311655074}
   - component: {fileID: 23249610368239612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6033,7 +6047,7 @@ GameObject:
   - component: {fileID: 4607848806433468}
   - component: {fileID: 33350763368480098}
   - component: {fileID: 23948190790481784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drink (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6111,7 +6125,7 @@ GameObject:
   - component: {fileID: 4319324559878068}
   - component: {fileID: 33356818465314688}
   - component: {fileID: 23177090210419412}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ketchup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6189,7 +6203,7 @@ GameObject:
   - component: {fileID: 4640255057945618}
   - component: {fileID: 33497431455991680}
   - component: {fileID: 23715359907780872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sausage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6359,7 +6373,7 @@ GameObject:
   - component: {fileID: 4422338446842994}
   - component: {fileID: 33989823711069484}
   - component: {fileID: 23212691790021078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mustard (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6437,7 +6451,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032847228818256}
   - component: {fileID: 215896504579785616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: refl
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}

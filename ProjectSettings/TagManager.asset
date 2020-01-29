@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Sliceable
+  - Parent
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - Sliceable
   - PostProcessing
-  - 
+  - Parent
   - 
   - 
   - 
