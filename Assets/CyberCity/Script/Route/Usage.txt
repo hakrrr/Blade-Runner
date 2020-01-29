@@ -1,0 +1,17 @@
+
+simple, rough system of route
+
+Usage:
+
+A. ROUTE
+  1. create new GameObject;
+  2. add 'CCRoute' script on it;
+  3. make children GameObjects = route points.
+B. VEHICLE
+  1. add your vehicle to scene ( + rigidbody, collider);
+  2. add 'CCVehicle' script on it;
+  3. add your route (see A.1.) to 'Route' slot;
+  4. adjust intuitive params;
+  5. DONE.
+
+  IL.ranch, 2018.

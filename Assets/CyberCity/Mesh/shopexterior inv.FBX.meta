@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: c3a93371b0e176146a86c3638f647630
+timeCreated: 1526858200
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box122
+    100002: Box123
+    100004: Box124
+    100006: Box125
+    100008: canopy001
+    100010: Cylinder006
+    100012: door002
+    100014: lamp010
+    100016: lamp011
+    100018: Object107
+    100020: Object108
+    100022: Object109
+    100024: pitcher001
+    100026: Plane152
+    100028: Plane153
+    100030: Plane154
+    100032: //RootNode
+    100034: yawer light001
+    400000: Box122
+    400002: Box123
+    400004: Box124
+    400006: Box125
+    400008: canopy001
+    400010: Cylinder006
+    400012: door002
+    400014: lamp010
+    400016: lamp011
+    400018: Object107
+    400020: Object108
+    400022: Object109
+    400024: pitcher001
+    400026: Plane152
+    400028: Plane153
+    400030: Plane154
+    400032: //RootNode
+    400034: yawer light001
+    2300000: Box122
+    2300002: Box123
+    2300004: Box124
+    2300006: Box125
+    2300008: canopy001
+    2300010: Cylinder006
+    2300012: door002
+    2300014: lamp010
+    2300016: lamp011
+    2300018: Object107
+    2300020: Object108
+    2300022: Object109
+    2300024: pitcher001
+    2300026: Plane152
+    2300028: Plane153
+    2300030: Plane154
+    2300032: yawer light001
+    3300000: Box122
+    3300002: Box123
+    3300004: Box124
+    3300006: Box125
+    3300008: canopy001
+    3300010: Cylinder006
+    3300012: door002
+    3300014: lamp010
+    3300016: lamp011
+    3300018: Object107
+    3300020: Object108
+    3300022: Object109
+    3300024: pitcher001
+    3300026: Plane152
+    3300028: Plane153
+    3300030: Plane154
+    3300032: yawer light001
+    4300000: Object107
+    4300002: canopy001
+    4300004: Box122
+    4300006: pitcher001
+    4300008: yawer light001
+    4300010: Plane152
+    4300012: Box123
+    4300014: Box124
+    4300016: Cylinder006
+    4300018: Box125
+    4300020: lamp010
+    4300022: lamp011
+    4300024: Object108
+    4300026: door002
+    4300028: Object109
+    4300030: Plane153
+    4300032: Plane154
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

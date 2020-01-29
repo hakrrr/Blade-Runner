@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 00b07cbaa23eb104cb2666fee2a9232a
+timeCreated: 1528063047
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box174
+    100002: Box184
+    100004: Box186
+    100006: Box187
+    100008: Box188
+    100010: Box189
+    100012: drink
+    100014: //RootNode
+    100016: Line007
+    100018: Line008
+    100020: Line009
+    100022: Line010
+    100024: chair
+    100026: dish 1
+    100028: dish 2
+    100030: dish 3
+    100032: dish 4
+    100034: tray 1
+    100036: tray 2
+    100038: tray 3
+    100040: tray 4
+    400000: Box174
+    400002: Box184
+    400004: Box186
+    400006: Box187
+    400008: Box188
+    400010: Box189
+    400012: drink
+    400014: //RootNode
+    400016: Line007
+    400018: Line008
+    400020: Line009
+    400022: Line010
+    400024: chair
+    400026: dish 1
+    400028: dish 2
+    400030: dish 3
+    400032: dish 4
+    400034: tray 1
+    400036: tray 2
+    400038: tray 3
+    400040: tray 4
+    2300000: Box174
+    2300002: Box184
+    2300004: Box186
+    2300006: Box187
+    2300008: Box188
+    2300010: Box189
+    2300012: drink
+    2300014: Line007
+    2300016: Line008
+    2300018: Line009
+    2300020: Line010
+    2300022: chair
+    2300024: dish 1
+    2300026: dish 2
+    2300028: dish 3
+    2300030: dish 4
+    2300032: tray 1
+    2300034: tray 2
+    2300036: tray 3
+    2300038: tray 4
+    3300000: Box174
+    3300002: Box184
+    3300004: Box186
+    3300006: Box187
+    3300008: Box188
+    3300010: Box189
+    3300012: drink
+    3300014: Line007
+    3300016: Line008
+    3300018: Line009
+    3300020: Line010
+    3300022: chair
+    3300024: dish 1
+    3300026: dish 2
+    3300028: dish 3
+    3300030: dish 4
+    3300032: tray 1
+    3300034: tray 2
+    3300036: tray 3
+    3300038: tray 4
+    4300000: Box174
+    4300002: Line007
+    4300004: Box186
+    4300006: Box187
+    4300008: Box188
+    4300010: Box189
+    4300012: Line008
+    4300014: Line009
+    4300016: Line010
+    4300018: drink
+    4300020: Box184
+    4300022: dish 4
+    4300024: tray 4
+    4300026: tray 3
+    4300028: tray 2
+    4300030: tray 1
+    4300032: dish 3
+    4300034: dish 2
+    4300036: dish 1
+    4300038: chair
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

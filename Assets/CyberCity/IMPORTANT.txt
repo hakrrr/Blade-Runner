@@ -1,0 +1,10 @@
+IMPORTANT:
+
+For best Post-Processing results:
+1. Edit > Project Settings > Quality > Anti Aliasing > 'Disabled' 
+2. Edit > Project Settings > Player > Other Settings > Color Space > 'Linear' 
+
+For CITY demoscene:
+> Please wait for GI calculating (see blue progress bar at right-down corner);
+> demo uses precomputed GI (not baked lightmaps);
+> you should bake lightmaps manually for additional performance.
