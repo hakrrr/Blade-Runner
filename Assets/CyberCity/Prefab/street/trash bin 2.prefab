@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33135187456235230}
   - component: {fileID: 23018848951048706}
   - component: {fileID: 65292199041131370}
+  - component: {fileID: 8050536328705036467}
   m_Layer: 0
   m_Name: trash bin 2
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -91,3 +93,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4090459, y: 0.9207601, z: 0.41956526}
   m_Center: {x: 0, y: 0.46038005, z: 0}
+--- !u!114 &8050536328705036467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306313482693252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 20

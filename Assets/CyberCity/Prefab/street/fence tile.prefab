@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33363663902167656}
   - component: {fileID: 23016280851253524}
   - component: {fileID: 65336598038342206}
+  - component: {fileID: 319935452524913678}
   m_Layer: 0
   m_Name: fence tile
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -91,3 +93,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.8610578, y: 2.7250767, z: 0.034641135}
   m_Center: {x: -0.000000059604645, y: 1.5725255, z: -0.00000005029142}
+--- !u!114 &319935452524913678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458816083372644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 20

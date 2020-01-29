@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33121270612094602}
   - component: {fileID: 23501596800988618}
   - component: {fileID: 65338551565889496}
+  - component: {fileID: -5081296943438388712}
   m_Layer: 0
   m_Name: pole 1
   m_TagString: Untagged
@@ -66,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -91,3 +93,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9704971, y: 15.282317, z: 1.2240355}
   m_Center: {x: 0, y: 7.340241, z: 0}
+--- !u!114 &-5081296943438388712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137060845838180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 20

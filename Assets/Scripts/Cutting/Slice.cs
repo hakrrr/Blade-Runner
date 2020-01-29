@@ -90,10 +90,11 @@ public class Slice : MonoBehaviour
         foreach(Collider c in hits)
         {
             ++hitCounter;
-            c.GetComponent<MeshCollider>().convex = true;
             SlicedHull hull = SliceObject(c.gameObject, crossMaterial);
-            if(hull != null)
+
+            if (hull != null)
             {
+                c.gameObject.transform.parent = null;
                 GameObject upper = hull.CreateUpperHull(c.gameObject, crossMaterial);
                 GameObject lower = hull.CreateLowerHull(c.gameObject, crossMaterial);
                 AddHullComp(upper);
@@ -107,7 +108,7 @@ public class Slice : MonoBehaviour
         MeshCollider collider = target.AddComponent<MeshCollider>();
         Vector3 bounds = collider.bounds.size;
 
-        collider.cookingOptions = MeshColliderCookingOptions.CookForFasterSimulation;
+        collider.cookingOptions = MeshColliderCookingOptions.EnableMeshCleaning;
 
         if (bounds.x / 2 <= 0.1 || bounds.y / 2 <= 0.1 || bounds.z / 2 <= 0.1)
         {
@@ -119,7 +120,7 @@ public class Slice : MonoBehaviour
         Rigidbody rb = target.AddComponent<Rigidbody>();
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.useGravity = false;
-        rb.AddExplosionForce(20, target.transform.position, 20);
+        rb.AddExplosionForce(10, target.transform.position, 20);
         target.layer = 8;
         target.AddComponent<Hull>();
         Destroy(target, 60f);

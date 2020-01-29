@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Meteor : MonoBehaviour
+public class FlyingObst : MonoBehaviour
 {
 
     [SerializeField] private float m_Speed;
@@ -17,7 +17,6 @@ public class Meteor : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
         m_Velocity = Vector3.back * m_Speed;
         m_Controller = GameObject.Find("Player").GetComponent<PlayerController>();
-        transform.localScale = Vector3.one * Random.Range(30, 50);
     }
 
     private void Start()

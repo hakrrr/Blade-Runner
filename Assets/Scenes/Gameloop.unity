@@ -5502,10 +5502,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d97b3875c8e2654ba9c97cb267b7a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Obstacle:
-  - {fileID: 8361198627953826848, guid: 68b9a5959bf2b074e8a161bff6393a27, type: 3}
-  - {fileID: 86607743722537727, guid: 6b3ec230e5d4db948906de16b9c45c10, type: 3}
-  - {fileID: 2777114964697312455, guid: 94aa70e55b2f81f4684bb49ae3ca8d21, type: 3}
+  groundObstacle:
+  - {fileID: 1457953640156240, guid: fa9b05566d19f1f49a52a3d8d45605d1, type: 3}
+  - {fileID: 1169933010592368, guid: ec983aa750f71c249b0813fb7915cb1e, type: 3}
+  - {fileID: 1747434372000534, guid: f69d14a9859efca48b83c860e97ca29e, type: 3}
+  airObstacle:
+  - {fileID: 1543198623792468, guid: 83c97202b18c61544bfbd5f1a21bc8bc, type: 3}
   terrains:
   - {fileID: 3361364607750437743}
   - {fileID: 2013048797268521765}
@@ -5516,7 +5518,7 @@ MonoBehaviour:
   player: {fileID: 1268248214}
   hand: {fileID: 1749875229}
   maxSpawnTime: 3
-  spawn: 0
+  spawn: 1
   power: 0
   bladeTime: 0
 --- !u!4 &304535397

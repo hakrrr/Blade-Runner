@@ -149,9 +149,9 @@
     <Compile Include="Assets\Scripts\Gamemanager.cs" />
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\GroundSpawn.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\Crystal.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\FlyingObst.cs" />
+    <Compile Include="Assets\Scripts\Obstacle\GroundObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Hull.cs" />
-    <Compile Include="Assets\Scripts\Obstacle\Meteor.cs" />
     <Compile Include="Assets\Scripts\OldCut\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\OldCut\DrawBounds.cs" />
     <Compile Include="Assets\Scripts\OldCut\MeshCutting\Intersections.cs" />
