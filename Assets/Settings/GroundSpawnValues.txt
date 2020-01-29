@@ -1,5 +1,5 @@
 Terrain A:
-offset: +117.6
+offset: -117.6
 Terrain B:
 offset: +101.248
 Terrain C:
