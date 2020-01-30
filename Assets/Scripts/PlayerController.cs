@@ -11,6 +11,9 @@ using UnityEngine.Rendering.PostProcessing;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    public delegate void UpdatePower(float amount);
+    public UpdatePower OnUpdatePower;
+
     private readonly string dodgeL = "Dodge_Right";
     private readonly string dodgeR = "Dodge_Left";
     private readonly Vector3 ShiftPosR = new Vector3(0.75f, -4.4f, -3f);
@@ -30,10 +33,11 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem[] m_SpeedParticles;
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
-
     private float m_timeCount = 0;
     private float m_velocity = 1f;
     private bool m_locked = false;
+
+    private const float m_powerMult = 0.001f;
 
     private void Awake()
     {
@@ -52,7 +56,7 @@ public class PlayerController : MonoBehaviour
         if (GestureSrcMg != null)
             GestureSrcMg.GestureDetectedEvent += GestureDetectedHandler;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
@@ -71,10 +75,13 @@ public class PlayerController : MonoBehaviour
         {
             BladeMode();
         }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            EndBladeMode();
+        }
         else
         {
             m_timeCount = 0;
-            EndBladeMode();
             RunningMode();
         }
     }
@@ -110,12 +117,14 @@ public class PlayerController : MonoBehaviour
     }
     private void EndBladeMode()
     {
+        float hits = m_Hand.GetComponent<Slice>().hitCounter;
+        OnUpdatePower?.Invoke(hits * m_powerMult);
         m_Animator.SetBool("BladeMode", false);
         m_Hand.SetActive(false);
-        CameraZoom(false);
     }
     private void RunningMode()
     {
+        CameraZoom(false);
         m_velocity = (m_Animator.GetBool("Running") ? 1.3f : 1f);
         m_Transform.position = Vector3.MoveTowards(m_Transform.position, InitPos, 0.1f);
         m_CapsuleCollider.center = Vector3.up;

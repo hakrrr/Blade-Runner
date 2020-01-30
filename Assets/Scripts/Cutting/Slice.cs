@@ -15,7 +15,7 @@ public class Slice : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Animator animator;
     
-    int hitCounter = 0;
+    public int hitCounter = 0;
     const float bTDIst = 8f;
     bool animLocked = false;
     GameObject bladeParticleParent;
@@ -26,7 +26,6 @@ public class Slice : MonoBehaviour
     Vector3 handPos = Vector3.zero;
     TextMeshProUGUI hitCounterText;
     ParticleSystem[] bladeParticles;
-
 
 
     private const float sliceRadius = 25f;
@@ -117,11 +116,11 @@ public class Slice : MonoBehaviour
 
         collider.cookingOptions = MeshColliderCookingOptions.EnableMeshCleaning;
 
-        if (bounds.x / 2 <= 0.1 || bounds.y / 2 <= 0.1 || bounds.z / 2 <= 0.1)
-        {
-            Destroy(target);
-            return;
-        }
+        //if (bounds.x / 2 <= 0.1 || bounds.y / 2 <= 0.1 || bounds.z / 2 <= 0.1)
+        //{
+        //    Destroy(target);
+        //    return;
+        //}
 
         collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();

@@ -14,12 +14,12 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private float maxSpawnTime;
     public bool spawn;
 
-    private const float powerDrain = 2f;
-    private const float bladeCharge = 2f;
+    private const float powerDrain = 0.02f;
+    private const float bladeCharge = 0.02f;
     private const float groundSpeed = 20f;
 
-    [HideInInspector] public float power;
-    [HideInInspector] public float bladeTime;
+    private float power;
+    private float bladeTime;
 
     private void Awake()
     {
@@ -28,8 +28,9 @@ public class Gamemanager : MonoBehaviour
 
         current = this;
         DontDestroyOnLoad(gameObject);
-        power = 100;
+        power = 1;
         bladeTime = 0;
+        player.OnUpdatePower += OnUpdatePower;
     }
     private void Start()
     {
@@ -48,9 +49,13 @@ public class Gamemanager : MonoBehaviour
         ///If in RunMode
         if (!hand.activeSelf)
         {
-            power -= Time.deltaTime * powerDrain;
-            bladeTime += Time.deltaTime * bladeCharge;
+            power = Mathf.Clamp(power - Time.deltaTime * powerDrain, 0, 1);
+            bladeTime = Mathf.Clamp(bladeTime + Time.deltaTime * bladeCharge, 0, 1);
             //Debug.Log("Power: " + power + " BladeTime: " + bladeTime);
+        }
+        else
+        {
+            bladeTime = Mathf.Clamp(bladeTime - Time.deltaTime * bladeCharge, 0, 1);
         }
     }
     private IEnumerator GroundSpawner()
@@ -79,4 +84,13 @@ public class Gamemanager : MonoBehaviour
             Instantiate(airObstacle[Random.Range(0, airObstacle.Length)], spawnPos, spawnRot);
         }
     }
+    public Vector2 GetStatus()
+    {
+        return new Vector2(power, bladeTime);
+    }
+    private void OnUpdatePower(float amount)
+    {
+        power += amount;
+    }
+
 }
