@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5853192553132783434}
   - component: {fileID: 5362138204543996596}
-  - component: {fileID: 124346691605264312}
   - component: {fileID: 5139293808676416484}
-  m_Layer: 8
+  - component: {fileID: 124346691605264312}
+  m_Layer: 0
   m_Name: SphereWheel
   m_TagString: Parent
   m_Icon: {fileID: 0}
@@ -51,19 +51,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &124346691605264312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4241917549464994845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20
 --- !u!65 &5139293808676416484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -77,6 +64,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.289402, z: 1}
   m_Center: {x: 0, y: 0.69535446, z: 0}
+--- !u!114 &124346691605264312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241917549464994845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 20
 --- !u!1 &6587269494703743592
 GameObject:
   m_ObjectHideFlags: 0

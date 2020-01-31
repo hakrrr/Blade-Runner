@@ -65,9 +65,9 @@ public class Gamemanager : MonoBehaviour
         {
             if (counter == 30)
                 maxSpawnTime /= 2;
-            yield return new WaitWhile(() => hand.activeSelf);
+            yield return new WaitWhile(() => hand.activeSelf || !spawn);
             yield return new WaitForSeconds(Random.Range(0f, maxSpawnTime));
-            Vector3 spawnPos = new Vector3(Random.Range(-3.3f, 4.4f), -4.7f, 100f);
+            Vector3 spawnPos = new Vector3(Random.Range(-1.45f, 4f), -4.7f, 100f);
             Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360f), 0);
             Instantiate(groundObstacle[Random.Range(0, groundObstacle.Length)], spawnPos, spawnRot);
             ++counter;
@@ -77,7 +77,7 @@ public class Gamemanager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitWhile(() => hand.activeSelf);
+            yield return new WaitWhile(() => hand.activeSelf || !spawn);
             yield return new WaitForSeconds(Random.Range(0f, maxSpawnTime));
             Vector3 spawnPos = new Vector3(Random.Range(-3.3f, 4.4f), Random.Range(-1.7f, -1), 100f);
             Quaternion spawnRot = Quaternion.Euler(Random.Range(-30f, 30f), Random.Range(0, 360f), Random.Range(-30f, 30));

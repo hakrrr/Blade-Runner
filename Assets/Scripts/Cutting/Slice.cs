@@ -88,19 +88,11 @@ public class Slice : MonoBehaviour
 
         foreach(Collider c in hits)
         {
-            if (c.CompareTag("Parent"))
-            {
-                for (int i = 0; i < c.transform.childCount; ++i)
-                {
-                    c.transform.GetChild(i).gameObject.AddComponent<Hull>();
-                }
-                continue;
-            }
             ++hitCounter;
             SlicedHull hull = SliceObject(c.gameObject, crossMaterial);
             if (hull != null)
             {
-                c.gameObject.transform.parent = null;
+                //c.gameObject.transform.parent = null;
                 GameObject upper = hull.CreateUpperHull(c.gameObject, crossMaterial);
                 GameObject lower = hull.CreateLowerHull(c.gameObject, crossMaterial);
                 AddHullComp(upper);
@@ -112,21 +104,11 @@ public class Slice : MonoBehaviour
     private void AddHullComp(GameObject target)
     {
         MeshCollider collider = target.AddComponent<MeshCollider>();
-        Vector3 bounds = collider.bounds.size;
-
-        collider.cookingOptions = MeshColliderCookingOptions.EnableMeshCleaning;
-
-        //if (bounds.x / 2 <= 0.1 || bounds.y / 2 <= 0.1 || bounds.z / 2 <= 0.1)
-        //{
-        //    Destroy(target);
-        //    return;
-        //}
-
+        collider.cookingOptions = MeshColliderCookingOptions.None;
         collider.convex = true;
         Rigidbody rb = target.AddComponent<Rigidbody>();
         rb.useGravity = false;
         rb.AddExplosionForce(10, target.transform.position, 20f);
-        //rb.interpolation = RigidbodyInterpolation.Interpolate;
         target.layer = 8;
         target.AddComponent<Hull>();
         Destroy(target, 10f);

@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 252192013232008184}
   - component: {fileID: 7786274821932081537}
   - component: {fileID: 119021190599479382}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: hotdog stand
   m_TagString: Parent
   m_Icon: {fileID: 0}

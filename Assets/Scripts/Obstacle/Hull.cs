@@ -2,29 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Hull : MonoBehaviour
 {
-    private PlayerController pController;
-    private Vector3 initVel;
-    private Rigidbody rb;
-    private const float backVel = 20f;
+    float lastPos;
+    Transform parent;
 
-    private void Awake()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        pController = GameObject.Find("Player").GetComponent<PlayerController>();
+        parent = transform.parent;
+        lastPos = parent.position.z;
     }
-    void Start()
-    {
-        initVel = rb.velocity + Vector3.back * backVel;
-    }
+
     void Update()
     {
-        if (pController.Velocity > .9f)
-            rb.velocity = initVel;
-        else
-            initVel = rb.velocity + Vector3.back * backVel;
+        float currPos = parent.position.z;
+        transform.position += Vector3.back * Mathf.Abs(lastPos - currPos);
+        lastPos = currPos;
     }
 }

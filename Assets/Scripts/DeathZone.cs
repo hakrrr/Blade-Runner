@@ -6,7 +6,7 @@ public class DeathZone : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.CompareTag("Parent") || other.gameObject.layer == 8)
             Destroy(other.gameObject);
     }
 }

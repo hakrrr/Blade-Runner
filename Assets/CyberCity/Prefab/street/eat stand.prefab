@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 8250965305862562100}
   - component: {fileID: 2563573858851546052}
   - component: {fileID: -7515323331416328190}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: eat stand
   m_TagString: Parent
   m_Icon: {fileID: 0}
