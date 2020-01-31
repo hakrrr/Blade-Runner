@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 23926465288724846}
   - component: {fileID: 136199512054218452}
   - component: {fileID: 3747696465568452895}
-  - component: {fileID: -3256295908620738802}
   m_Layer: 8
   m_Name: hydrant
   m_TagString: Untagged
@@ -111,16 +110,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-3256295908620738802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747434372000534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20

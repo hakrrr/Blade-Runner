@@ -20,6 +20,7 @@ public class Gamemanager : MonoBehaviour
 
     private float power;
     private float bladeTime;
+    private int score;
 
     private void Awake()
     {
@@ -28,9 +29,8 @@ public class Gamemanager : MonoBehaviour
 
         current = this;
         DontDestroyOnLoad(gameObject);
-        power = 1;
-        bladeTime = 0;
-        player.OnUpdatePower += OnUpdatePower;
+        power = 1; bladeTime = 0; score = 0;
+        player.OnUpdatePower += OnUpdateStats;
     }
     private void Start()
     {
@@ -51,7 +51,7 @@ public class Gamemanager : MonoBehaviour
         {
             power = Mathf.Clamp(power - Time.deltaTime * powerDrain, 0, 1);
             bladeTime = Mathf.Clamp(bladeTime + Time.deltaTime * bladeCharge, 0, 1);
-            //Debug.Log("Power: " + power + " BladeTime: " + bladeTime);
+            score = Mathf.Clamp(Mathf.FloorToInt(Time.deltaTime * 100) + score, 0, 999999);
         }
         else
         {
@@ -84,13 +84,14 @@ public class Gamemanager : MonoBehaviour
             Instantiate(airObstacle[Random.Range(0, airObstacle.Length)], spawnPos, spawnRot);
         }
     }
-    public Vector2 GetStatus()
+    public Vector3 GetStatus()
     {
-        return new Vector2(power, bladeTime);
+        return new Vector3(power, bladeTime, score);
     }
-    private void OnUpdatePower(float amount)
+    private void OnUpdateStats(float p, int s)
     {
-        power += amount;
+        power += p;
+        score += s;
     }
 
 }

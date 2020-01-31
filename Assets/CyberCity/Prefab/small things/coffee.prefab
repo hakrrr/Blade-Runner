@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1921822704384876467}
   - component: {fileID: 7039007673202940613}
   - component: {fileID: 3999060427776857761}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: coffee
   m_TagString: Parent
   m_Icon: {fileID: 0}

@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 4543497407283668}
   - component: {fileID: 8250965305862562100}
   - component: {fileID: 2563573858851546052}
-  - component: {fileID: -7515323331416328190}
+  - component: {fileID: 4469916790875912486}
   m_Layer: 0
   m_Name: eat stand
   m_TagString: Parent
@@ -799,7 +799,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.002552, y: 5.245243, z: 2.0061455}
   m_Center: {x: 0.10479504, y: 1.3951049, z: 0.0034354925}
---- !u!114 &-7515323331416328190
+--- !u!114 &4469916790875912486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

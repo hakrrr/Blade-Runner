@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4228080467045678}
   - component: {fileID: 33090981479776342}
   - component: {fileID: 23232533894884702}
-  - component: {fileID: 3787874514280752624}
   m_Layer: 0
   m_Name: cigarette b
   m_TagString: Untagged
@@ -79,17 +78,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3787874514280752624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1839087241261408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c0bd48e9e400b4e95df61c1a1af09c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20
-  m_rotSpeed: 3

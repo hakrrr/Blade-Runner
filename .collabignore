@@ -31,3 +31,6 @@ ehthumbs.db
 [Bb]uild
 sysinfo.txt
 *.stackdump
+
+# Manual
+Assets/CyberCity/Textures/

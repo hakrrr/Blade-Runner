@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4278785978594586}
   - component: {fileID: 33193597520883230}
   - component: {fileID: 23142923349796718}
-  - component: {fileID: -7316171263049946445}
   m_Layer: 0
   m_Name: long lamp 1
   m_TagString: Untagged
@@ -80,16 +79,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-7316171263049946445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946581880964686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20

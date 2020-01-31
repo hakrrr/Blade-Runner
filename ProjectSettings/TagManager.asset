@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
-  - Sliceable
   - Parent
+  - Powerbar
+  - BladeTime
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33454265634032850}
   - component: {fileID: 23658524838121192}
   - component: {fileID: 65389606686555170}
-  - component: {fileID: -93021304177898019}
   m_Layer: 0
   m_Name: fence door
   m_TagString: Untagged
@@ -93,16 +92,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4399486, y: 2.7250762, z: 0.03464146}
   m_Center: {x: 0.6999743, y: 1.3425379, z: 0.00000021979213}
---- !u!114 &-93021304177898019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989991239734488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20

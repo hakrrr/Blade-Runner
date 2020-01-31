@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33318511608941092}
   - component: {fileID: 23408504290469460}
   - component: {fileID: 65547691533416762}
-  - component: {fileID: 4533511923976319314}
   m_Layer: 0
   m_Name: pole 2 piece
   m_TagString: Untagged
@@ -93,16 +92,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9045, y: 3.9994202, z: 0.50000095}
   m_Center: {x: 0.0000005364418, y: 0.0000009536743, z: -0.000000074505806}
---- !u!114 &4533511923976319314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434103627775264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20

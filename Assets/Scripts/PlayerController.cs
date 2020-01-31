@@ -11,7 +11,7 @@ using UnityEngine.Rendering.PostProcessing;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    public delegate void UpdatePower(float amount);
+    public delegate void UpdatePower(float p, int s);
     public UpdatePower OnUpdatePower;
 
     private readonly string dodgeL = "Dodge_Right";
@@ -85,11 +85,7 @@ public class PlayerController : MonoBehaviour
             RunningMode();
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Obstacle"))
-            Debug.Log("Hit by Obstacle");
-    }
+
     public float Velocity { get { return m_velocity; }}
     private void GestureDetectedHandler(string name, float conf)
     {
@@ -118,7 +114,7 @@ public class PlayerController : MonoBehaviour
     private void EndBladeMode()
     {
         float hits = m_Hand.GetComponent<Slice>().hitCounter;
-        OnUpdatePower?.Invoke(hits * m_powerMult);
+        OnUpdatePower?.Invoke(hits * m_powerMult, (int) hits * 10);
         m_Animator.SetBool("BladeMode", false);
         m_Hand.SetActive(false);
     }

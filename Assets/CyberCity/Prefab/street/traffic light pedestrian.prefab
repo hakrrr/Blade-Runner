@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 4642047587967424}
   - component: {fileID: 33150588104621534}
   - component: {fileID: 23823649650622414}
-  - component: {fileID: 1843575114999883661}
   m_Layer: 0
   m_Name: traffic light pedestrian
   m_TagString: Untagged
@@ -162,19 +161,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1843575114999883661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337115271205746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d55e8d5da10a84884d3cf00ec6ad12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 20
 --- !u!1 &1610945184608182
 GameObject:
   m_ObjectHideFlags: 0
