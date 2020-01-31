@@ -82,8 +82,8 @@ public class Blade : MonoBehaviour
         var start = cam.ScreenPointToRay(A);
         var end = cam.ScreenPointToRay(B);
 
-        OnLineDrawn?.Invoke(start.GetPoint(cam.nearClipPlane),
-            end.GetPoint(cam.nearClipPlane),
+        OnLineDrawn?.Invoke(start.GetPoint(15f),
+            end.GetPoint(15f),
             end.direction.normalized);
     }
 

@@ -8,7 +8,6 @@ using TMPro;
 
 public class Slice : MonoBehaviour
 {
-
     [SerializeField] private Material crossMaterial;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject cineCamera;
@@ -27,8 +26,7 @@ public class Slice : MonoBehaviour
     TextMeshProUGUI hitCounterText;
     ParticleSystem[] bladeParticles;
 
-
-    private const float sliceRadius = 25f;
+    private const float sliceRadius = 10f;
     private void Awake()
     {
         parent = transform.parent;
@@ -92,7 +90,6 @@ public class Slice : MonoBehaviour
             SlicedHull hull = SliceObject(c.gameObject, crossMaterial);
             if (hull != null)
             {
-                //c.gameObject.transform.parent = null;
                 GameObject upper = hull.CreateUpperHull(c.gameObject, crossMaterial);
                 GameObject lower = hull.CreateLowerHull(c.gameObject, crossMaterial);
                 AddHullComp(upper);
@@ -103,15 +100,19 @@ public class Slice : MonoBehaviour
     }
     private void AddHullComp(GameObject target)
     {
-        MeshCollider collider = target.AddComponent<MeshCollider>();
-        collider.cookingOptions = MeshColliderCookingOptions.None;
-        collider.convex = true;
-        Rigidbody rb = target.AddComponent<Rigidbody>();
-        rb.useGravity = false;
-        rb.AddExplosionForce(10, target.transform.position, 20f);
-        target.layer = 8;
+        Vector3 bounds = target.GetComponent<Renderer>().bounds.size;
+        if(bounds.x > 0.1f && bounds.y > 0.1f && bounds.z > 0.1f)
+        {
+            MeshCollider collider = target.AddComponent<MeshCollider>();
+            collider.cookingOptions = MeshColliderCookingOptions.None;
+            collider.convex = true;
+            Rigidbody rb = target.AddComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.AddExplosionForce(10, target.transform.position, 20f);
+            target.layer = 8;
+        }
         target.AddComponent<Hull>();
-        Destroy(target, 10f);
+        //Destroy(target, RegressionDTime(hitCounter));
     }
     private void BladeEffect()
     {
@@ -147,7 +148,8 @@ public class Slice : MonoBehaviour
         _A -= (length1 * _dir);
         Vector3 newPos = mainCamera.ViewportToWorldPoint(new Vector3(_A.x,_A.y, bTDIst));
         bladeParticles[0].transform.position = newPos;
-        bladeParticles[0].transform.rotation = Quaternion.LookRotation(dir);
+        if(dir != Vector2.zero)
+            bladeParticles[0].transform.rotation = Quaternion.LookRotation(dir);
         bladeParticles[0].transform.Rotate(new Vector3(90f, 90f, 90f));
     }
     private void AnimateSlice(Vector2 normDir)
@@ -172,5 +174,13 @@ public class Slice : MonoBehaviour
 
         return target.Slice(plane.position, plane.up, crossM);
     }
-
+    /// <summary>
+    /// Formula 1 / (ax + b) 
+    /// Tweek a: higher a == higher Mid y
+    /// Tweek b: higher b == higher End y
+    /// </summary>
+    private float RegressionDTime(float x)
+    {
+        return 1 / (0.0004f * x + 0.095f);
+    }
 }
