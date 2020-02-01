@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AnimationLock.cs" />
     <Compile Include="Assets\CyberCity\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\CyberCity\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\CyberCity\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />

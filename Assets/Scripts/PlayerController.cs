@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool Pc;
     [SerializeField] private GameObject m_GestureMg;
     [SerializeField] private GameObject m_Hand;
+    [SerializeField] private Gamemanager m_Gm;
     [SerializeField] private Camera m_Cam;
     [SerializeField] private CinemachineVirtualCamera m_Cmvs;
     [SerializeField] private float m_DodgeSpeed;
@@ -59,22 +60,20 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (m_locked)
-            return;
-
-        if (Pc)
+        if (Pc && !m_locked)
             PCInput();
+        if(m_Gm.GetStatus().y == 0f)
+        {
+            EndBladeMode();
+        }
         AnimationInput();
     }
     private void PCInput()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            BladeMode();
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            EndBladeMode();
+            m_locked = true;
+            m_Animator.SetBool("BladeMode", true);
         }
         else if (Input.GetKeyDown("space"))
         {
@@ -95,7 +94,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKey("w"))
         {
-            m_locked = true;
             m_Animator.SetBool("Running", true);
         }
         else
@@ -121,7 +119,11 @@ public class PlayerController : MonoBehaviour
         {
             m_CapsuleCollider.center = Vector3.up * 2f;
         }
-        else if (!m_Animator.GetBool("BladeMode"))
+        else if (m_Animator.GetBool("BladeMode"))
+        {
+            BladeMode();
+        }
+        else
         {
             RunningMode();
         }
@@ -132,23 +134,19 @@ public class PlayerController : MonoBehaviour
     {
         if (!m_locked &&m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && conf > 0.5f)
         {
-            StartCoroutine(AnimationLock());
             if (name.Equals(dodgeL))
             {
                 m_Animator.SetTrigger("DodgeL");
             }else if (name.Equals(dodgeR))
             {
-
                 m_Animator.SetTrigger("DodgeR");
             }
             //Todo: Draw Katana
         }
     }
-
     #region Mode
     private void BladeMode()
     {
-        m_Animator.SetBool("BladeMode", true);
         m_Hand.SetActive(true);
         CameraZoom(true);
     }
@@ -224,12 +222,9 @@ public class PlayerController : MonoBehaviour
             intensity.value = vign;
     }
     #endregion
-
-    private IEnumerator AnimationLock()
+    //For Run Animation to call to free Animation lock
+    public void Unlock()
     {
-        m_locked = true;
-        yield return new WaitForSeconds(1f);
         m_locked = false;
     }
-
 }

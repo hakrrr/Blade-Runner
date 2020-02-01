@@ -4263,6 +4263,10 @@ PrefabInstance:
       propertyPath: Pc
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 532031392, guid: 60fe65099fdaccb4ca609cbe97800db8, type: 3}
+      propertyPath: m_Gm
+      value: 
+      objectReference: {fileID: 304535396}
     - target: {fileID: 165508281573884865, guid: 60fe65099fdaccb4ca609cbe97800db8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

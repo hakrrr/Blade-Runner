@@ -15,7 +15,7 @@ public class Gamemanager : MonoBehaviour
     public bool spawn;
 
     private const float powerDrain = 0.06f;
-    private const float bladeCharge = 0.1f;
+    private const float bladeCharge = 0.5f;
     private const float groundSpeed = 20f;
 
     private float power;
