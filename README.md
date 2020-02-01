@@ -1,5 +1,5 @@
 # ASG19-20
-Microsoft Kinect Game for PC: "Blade Runner"
+Microsoft Kinect and PC Game: "Blade Runner"
 
 Simple Endless-Runner with cutting features via kinect sensors
 
