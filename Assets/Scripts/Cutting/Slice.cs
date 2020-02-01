@@ -101,7 +101,7 @@ public class Slice : MonoBehaviour
     private void AddHullComp(GameObject target)
     {
         Vector3 bounds = target.GetComponent<Renderer>().bounds.size;
-        if(bounds.x > 0.1f && bounds.y > 0.1f && bounds.z > 0.1f)
+        if(bounds.x / 2 > 0.1f && bounds.y / 2 > 0.1f && bounds.z / 2 > 0.1f)
         {
             MeshCollider collider = target.AddComponent<MeshCollider>();
             collider.cookingOptions = MeshColliderCookingOptions.None;

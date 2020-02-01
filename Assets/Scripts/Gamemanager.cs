@@ -15,7 +15,7 @@ public class Gamemanager : MonoBehaviour
     public bool spawn;
 
     private const float powerDrain = 0.06f;
-    private const float bladeCharge = 0.02f;
+    private const float bladeCharge = 0.1f;
     private const float groundSpeed = 20f;
 
     private float power;
@@ -44,6 +44,7 @@ public class Gamemanager : MonoBehaviour
     {
         foreach (Transform t in terrains)
         {
+            Vector3 delta = Vector3.back * Time.deltaTime * player.Velocity * groundSpeed;
             t.position += Vector3.back * Time.deltaTime * player.Velocity * groundSpeed;
         }
         ///If in RunMode

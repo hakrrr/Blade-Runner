@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private readonly Vector3 ShiftPosL = new Vector3(-0.75f, -4.4f, -3f);
     private readonly Vector3 InitPos = new Vector3(0, -4.4f, -3f);
 
+    public bool Pc;
     [SerializeField] private GameObject m_GestureMg;
     [SerializeField] private GameObject m_Hand;
     [SerializeField] private Camera m_Cam;
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem[] m_SpeedParticles;
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
-    private float m_timeCount = 0;
+    private float m_startX = 0;
     private float m_velocity = 1f;
     private bool m_locked = false;
 
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
         m_CapsuleCollider = GetComponent<CapsuleCollider>();
         m_CineComposer = m_Cmvs.GetCinemachineComponent<CinemachineComposer>();
         m_CineTransposer = m_Cmvs.GetCinemachineComponent<CinemachineTransposer>();
-        m_SpeedParticles = GetComponentsInChildren<ParticleSystem>();
+        m_SpeedParticles = GetComponentsInChildren<ParticleSystem>(true);
     }
     private void Start()
     {
@@ -58,20 +59,16 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
-        {
-            Move(false);
-        }
-        else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeR"))
-        {
-            Move(true);
-        }
-        else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
-        {
-            Jump();
-        }
-        //BladeMode
-        else if (Input.GetMouseButton(1))
+        if (m_locked)
+            return;
+
+        if (Pc)
+            PCInput();
+        AnimationInput();
+    }
+    private void PCInput()
+    {
+        if (Input.GetMouseButton(1))
         {
             BladeMode();
         }
@@ -79,9 +76,53 @@ public class PlayerController : MonoBehaviour
         {
             EndBladeMode();
         }
+        else if (Input.GetKeyDown("space"))
+        {
+            m_locked = true;
+            m_Animator.SetTrigger("Jump");
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+            m_locked = true;
+            m_startX = transform.position.x;
+            m_Animator.SetTrigger("DodgeR");
+        }
+        else if (Input.GetKeyDown("a"))
+        {
+            m_locked = true;
+            m_startX = transform.position.x;
+            m_Animator.SetTrigger("DodgeL");
+        }
+        else if (Input.GetKey("w"))
+        {
+            m_locked = true;
+            m_Animator.SetBool("Running", true);
+        }
         else
         {
-            m_timeCount = 0;
+            m_Animator.SetBool("Running", false);
+        }
+    }
+    private void AnimationInput()
+    {
+        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
+        {
+            transform.DOMoveX(m_startX - 1f, 0.4f);
+            DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+            m_SpeedParticles[1].Stop();
+        }
+        else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeR"))
+        {
+            transform.DOMoveX(m_startX + 1f, 0.4f);
+            DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+            m_SpeedParticles[1].Stop();
+        }
+        else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            m_CapsuleCollider.center = Vector3.up * 2f;
+        }
+        else if (!m_Animator.GetBool("BladeMode"))
+        {
             RunningMode();
         }
     }
@@ -97,9 +138,9 @@ public class PlayerController : MonoBehaviour
                 m_Animator.SetTrigger("DodgeL");
             }else if (name.Equals(dodgeR))
             {
+
                 m_Animator.SetTrigger("DodgeR");
             }
-
             //Todo: Draw Katana
         }
     }
@@ -121,9 +162,14 @@ public class PlayerController : MonoBehaviour
     private void RunningMode()
     {
         CameraZoom(false);
-        m_velocity = (m_Animator.GetBool("Running") ? 1.3f : 1f);
-        m_Transform.position = Vector3.MoveTowards(m_Transform.position, InitPos, 0.1f);
         m_CapsuleCollider.center = Vector3.up;
+
+        if (!m_Animator.GetBool("Running"))
+            m_SpeedParticles[1].Stop();
+        else if (!m_SpeedParticles[1].isPlaying)
+            m_SpeedParticles[1].Play();
+
+        //Note: Animation of Run should be dampened
         m_Animator.SetFloat("RunningMult", m_velocity);
     }
     private void CameraZoom(bool bladeMode)
@@ -143,7 +189,8 @@ public class PlayerController : MonoBehaviour
         DOVirtual.Float(m_CineComposer.m_TrackedObjectOffset.y, RotoffsetY, .4f, SetRotOffset);
         DOVirtual.Float(m_CineTransposer.m_FollowOffset.y, PosoffsetY, .4f, SetPosOffset);
         DOVirtual.Float(m_Cmvs.m_Lens.FieldOfView, FOV, .3f, SetFOV);
-        DOVirtual.Float(m_velocity, bladeMode ? .05f : 1f, .3f, (float x) => m_velocity = x);
+        DOVirtual.Float(m_velocity, bladeMode ? .05f : m_Animator.GetBool("Running")? 1.5f : 1f,
+            .3f, (float x) => m_velocity = x);
 
         //Post Processing
         float currChrom = m_Cam.GetComponentInChildren<PostProcessVolume>().profile.
@@ -175,17 +222,6 @@ public class PlayerController : MonoBehaviour
     {
         m_Cam.GetComponentInChildren<PostProcessVolume>().profile.GetSetting<Vignette>().
             intensity.value = vign;
-    }
-    #endregion
-
-    #region Movement
-    private void Move(bool right)
-    {
-        m_Transform.position = Vector3.Lerp(InitPos, right? ShiftPosR : ShiftPosL, m_timeCount += Time.deltaTime * m_DodgeSpeed);
-    }
-    private void Jump()
-    {
-        m_CapsuleCollider.center = Vector3.up * 2f;
     }
     #endregion
 

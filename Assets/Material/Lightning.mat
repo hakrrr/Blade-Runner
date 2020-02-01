@@ -104,6 +104,6 @@ Material:
     - _BaseColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 1.5692124, g: 3.0195448, b: 4.5412054, a: 1}
+    - _EmissionColor: {r: 2.4145193, g: 4.576775, b: 6.8831816, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
