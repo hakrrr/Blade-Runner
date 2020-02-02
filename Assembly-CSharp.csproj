@@ -147,7 +147,6 @@
     <Compile Include="Assets\Scripts\Character\BasicAvatarModel.cs" />
     <Compile Include="Assets\Scripts\Character\KinectPointManAvatarModel.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerControllerTransform.cs" />
-    <Compile Include="Assets\Scripts\cursor1.cs" />
     <Compile Include="Assets\Scripts\Cutting\Blade.cs" />
     <Compile Include="Assets\Scripts\Cutting\DetectJoints.cs" />
     <Compile Include="Assets\Scripts\Cutting\Slice.cs" />
@@ -156,6 +155,7 @@
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\GroundSpawn.cs" />
     <Compile Include="Assets\Scripts\MainMenuNew.cs" />
+    <Compile Include="Assets\Scripts\Mouse.cs" />
     <Compile Include="Assets\Scripts\Obstacle\FlyingObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\GroundObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Hull.cs" />

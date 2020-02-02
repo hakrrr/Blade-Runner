@@ -141,7 +141,6 @@ public class MainMenuNew : MonoBehaviour {
     }
     public void ToCalibration()
     {
-        CameraObject.SetBool("Cali", true);
         kinectmodel.transform.rotation=new Quaternion (0,1,0, kinectmodel.transform.rotation.w);
         //kinectmodel.transform.localPosition = new Vector3(-50,0,0);
 
