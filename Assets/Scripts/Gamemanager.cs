@@ -29,7 +29,7 @@ public class Gamemanager : MonoBehaviour
 
         current = this;
         DontDestroyOnLoad(gameObject);
-        power = 1; bladeTime = 0; score = 0;
+        power = 1; bladeTime = .3f; score = 0;
         player.OnUpdatePower += OnUpdateStats;
     }
     private void Start()

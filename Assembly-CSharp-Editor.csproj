@@ -98,6 +98,7 @@
     <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\EditorResources.cs" />
     <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\FxStyles.cs" />
     <Compile Include="Assets\CyberCity\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
+    <Compile Include="Assets\SlimUI\Modern Menu 1\Editor\SlimUIWindow.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>C:/Users/James Li/Documents/GitHub/ASG19-20/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>

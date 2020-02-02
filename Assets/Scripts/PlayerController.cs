@@ -63,14 +63,12 @@ public class PlayerController : MonoBehaviour
         if (Pc && !m_locked)
             PCInput();
         if(m_Gm.GetStatus().y == 0f)
-        {
             EndBladeMode();
-        }
         AnimationInput();
     }
     private void PCInput()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && m_Gm.GetStatus().y > 0.1f)
         {
             m_locked = true;
             m_Animator.SetBool("BladeMode", true);
@@ -105,19 +103,26 @@ public class PlayerController : MonoBehaviour
     {
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
-            transform.DOMoveX(m_startX - 1f, 0.4f);
-            DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+            if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
+            {
+                transform.DOMoveX(Mathf.Clamp(m_startX - .75f, -1.75f, 2.75f), 0.3f);
+                DOVirtual.Float(m_velocity, .5f, 0.1f, (float x) => m_velocity = x);
+            }
             m_SpeedParticles[1].Stop();
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeR"))
         {
-            transform.DOMoveX(m_startX + 1f, 0.4f);
-            DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+            if(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
+            {
+                transform.DOMoveX(Mathf.Clamp(m_startX + .75f, -1.75f, 2.75f), 0.3f);
+                DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+            }
             m_SpeedParticles[1].Stop();
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
             m_CapsuleCollider.center = Vector3.up * 2f;
+            m_SpeedParticles[1].Stop();
         }
         else if (m_Animator.GetBool("BladeMode"))
         {
