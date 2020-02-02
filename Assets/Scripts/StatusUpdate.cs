@@ -21,7 +21,6 @@ public class StatusUpdate : MonoBehaviour
         score = transform.Find("Score").GetComponent<TextMeshProUGUI>();
         lastScore = 0;
     }
-
     //Note: GetComponentsInChildren includes parent object
     private void FixedUpdate()
     {
@@ -29,6 +28,12 @@ public class StatusUpdate : MonoBehaviour
         blade.fillAmount = currStats[1];
         DOVirtual.Float(power.fillAmount, currStats[0], 0.2f, UpdatePower);
         DOVirtual.Float(lastScore, currStats[2], 0.3f, UpdateScore);
+        Color temp = blade.color;
+        if (blade.fillAmount > 0.6f)
+            temp.a = .8f;
+        else
+            temp.a = .35f;
+        blade.color = temp;
     }
     private void UpdatePower(float x)
     {

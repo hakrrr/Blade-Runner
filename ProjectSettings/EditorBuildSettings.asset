@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleMenu.unity
     guid: 12ce7ea49e87f0245a53015302a04d19
   - enabled: 1
-    path: Assets/Scenes/Gameloop.unity
+    path: Assets/Scenes/GameLoop.unity
     guid: 762cd911981f2e545b57cd3a70309474
   m_configObjects: {}

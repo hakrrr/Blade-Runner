@@ -104,9 +104,9 @@ GameObject:
   - component: {fileID: 8156788722455552271}
   - component: {fileID: 8218138770614583682}
   - component: {fileID: 9074327968358257630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: road prop
-  m_TagString: Parent
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

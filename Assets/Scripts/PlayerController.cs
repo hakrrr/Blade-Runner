@@ -16,37 +16,33 @@ public class PlayerController : MonoBehaviour
 
     private readonly string dodgeL = "Dodge_Right";
     private readonly string dodgeR = "Dodge_Left";
-    private readonly Vector3 ShiftPosR = new Vector3(0.75f, -4.4f, -3f);
-    private readonly Vector3 ShiftPosL = new Vector3(-0.75f, -4.4f, -3f);
-    private readonly Vector3 InitPos = new Vector3(0, -4.4f, -3f);
-
-    public bool Pc;
+    
+    [SerializeField] private bool Pc;
     [SerializeField] private GameObject m_GestureMg;
     [SerializeField] private GameObject m_Hand;
     [SerializeField] private Gamemanager m_Gm;
     [SerializeField] private Camera m_Cam;
     [SerializeField] private CinemachineVirtualCamera m_Cmvs;
-    [SerializeField] private float m_DodgeSpeed;
 
     private GestureSourceManager GestureSrcMg;
-    private Transform m_Transform;
     private Animator m_Animator;
-    private CapsuleCollider m_CapsuleCollider;
     private ParticleSystem[] m_SpeedParticles;
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
     private float m_startX = 0;
     private float m_velocity = 1f;
+    private bool m_bladeRdy = false;
     private bool m_locked = false;
 
-    private const float m_powerMult = 0.001f;
+    private const float m_powerMult = 0.01f;
 
+    /// <summary>
+    /// SpeedParticles Index 0 = SwordLight, 1 = Warpstr, 2 = FootLight
+    /// </summary>
     private void Awake()
     {
         GestureSrcMg = m_GestureMg.GetComponent<GestureSourceManager>();
-        m_Transform = GetComponent<Transform>();
         m_Animator = GetComponent<Animator>();
-        m_CapsuleCollider = GetComponent<CapsuleCollider>();
         m_CineComposer = m_Cmvs.GetCinemachineComponent<CinemachineComposer>();
         m_CineTransposer = m_Cmvs.GetCinemachineComponent<CinemachineTransposer>();
         m_SpeedParticles = GetComponentsInChildren<ParticleSystem>(true);
@@ -60,15 +56,23 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        UpdateBladeRdy();
         if (Pc && !m_locked)
             PCInput();
         if(m_Gm.GetStatus().y == 0f)
             EndBladeMode();
         AnimationInput();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit!");
+        }
+    }
     private void PCInput()
     {
-        if (Input.GetMouseButtonDown(1) && m_Gm.GetStatus().y > 0.1f)
+        if (Input.GetMouseButtonDown(1) && m_bladeRdy)
         {
             m_locked = true;
             m_Animator.SetBool("BladeMode", true);
@@ -106,23 +110,22 @@ public class PlayerController : MonoBehaviour
             if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
             {
                 transform.DOMoveX(Mathf.Clamp(m_startX - .75f, -1.75f, 2.75f), 0.3f);
-                DOVirtual.Float(m_velocity, .5f, 0.1f, (float x) => m_velocity = x);
+                DOVirtual.Float(m_velocity, .7f, 0.1f, (float x) => m_velocity = x);
             }
-            m_SpeedParticles[1].Stop();
+            EnableFootPart(false);
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeR"))
         {
             if(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
             {
                 transform.DOMoveX(Mathf.Clamp(m_startX + .75f, -1.75f, 2.75f), 0.3f);
-                DOVirtual.Float(m_velocity, .3f, 0.1f, (float x) => m_velocity = x);
+                DOVirtual.Float(m_velocity, .7f, 0.1f, (float x) => m_velocity = x);
             }
-            m_SpeedParticles[1].Stop();
+            EnableFootPart(false);
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
-            m_CapsuleCollider.center = Vector3.up * 2f;
-            m_SpeedParticles[1].Stop();
+            EnableFootPart(false);
         }
         else if (m_Animator.GetBool("BladeMode"))
         {
@@ -133,7 +136,6 @@ public class PlayerController : MonoBehaviour
             RunningMode();
         }
     }
-
     public float Velocity { get { return m_velocity; }}
     private void GestureDetectedHandler(string name, float conf)
     {
@@ -165,12 +167,11 @@ public class PlayerController : MonoBehaviour
     private void RunningMode()
     {
         CameraZoom(false);
-        m_CapsuleCollider.center = Vector3.up;
 
         if (!m_Animator.GetBool("Running"))
-            m_SpeedParticles[1].Stop();
-        else if (!m_SpeedParticles[1].isPlaying)
-            m_SpeedParticles[1].Play();
+            EnableFootPart(false);
+        else
+            EnableFootPart(true);
 
         //Note: Animation of Run should be dampened
         m_Animator.SetFloat("RunningMult", m_velocity);
@@ -185,8 +186,6 @@ public class PlayerController : MonoBehaviour
         {
             if (bladeMode)
                 p.Stop();
-            else if(!p.isPlaying)
-                p.Play();
         }
 
         DOVirtual.Float(m_CineComposer.m_TrackedObjectOffset.y, RotoffsetY, .4f, SetRotOffset);
@@ -227,6 +226,28 @@ public class PlayerController : MonoBehaviour
             intensity.value = vign;
     }
     #endregion
+
+    #region Particles
+    private void EnableFootPart(bool enable)
+    {
+        if (!enable)
+            m_SpeedParticles[2].Stop();
+        else if (!m_SpeedParticles[2].isPlaying)
+            m_SpeedParticles[2].Play();
+    }    
+    private void EnableSwordPart(bool enable)
+    {
+        if (!enable)
+            m_SpeedParticles[0].Stop();
+        else if(!m_SpeedParticles[0].isPlaying)
+            m_SpeedParticles[0].Play();
+    }
+    #endregion
+    private void UpdateBladeRdy()
+    {
+        m_bladeRdy = (m_Gm.GetStatus().y > 0.6f);
+        EnableSwordPart(m_bladeRdy);
+    }
     //For Run Animation to call to free Animation lock
     public void Unlock()
     {

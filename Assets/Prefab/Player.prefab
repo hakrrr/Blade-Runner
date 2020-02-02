@@ -4811,20 +4811,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!136 &532031393
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459754330783282865}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &532031392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4837,11 +4823,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6caa326846862a341af7a558936d4ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pc: 0
   m_GestureMg: {fileID: 0}
   m_Hand: {fileID: 0}
+  m_Gm: {fileID: 0}
   m_Cam: {fileID: 0}
   m_Cmvs: {fileID: 0}
   m_DodgeSpeed: 0
+--- !u!65 &1415926412573727247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459754330783282865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1.87, z: 0.4}
+  m_Center: {x: 0, y: 1, z: 0.5}
 --- !u!1 &4580362955585139727
 GameObject:
   m_ObjectHideFlags: 0

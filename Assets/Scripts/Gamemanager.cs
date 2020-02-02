@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Gamemanager : MonoBehaviour
 {
@@ -14,9 +15,10 @@ public class Gamemanager : MonoBehaviour
     [SerializeField] private float maxSpawnTime;
     public bool spawn;
 
-    private const float powerDrain = 0.06f;
-    private const float bladeCharge = 0.5f;
-    private const float groundSpeed = 20f;
+    public float powerDrain = 0.06f;
+    public float bladeCharge = 0.5f;
+    public float bladeDrain = 0.5f;
+    public float groundSpeed = 20f;
 
     private float power;
     private float bladeTime;
@@ -56,7 +58,7 @@ public class Gamemanager : MonoBehaviour
         }
         else
         {
-            bladeTime = Mathf.Clamp(bladeTime - Time.deltaTime * bladeCharge, 0, 1);
+            bladeTime = Mathf.Clamp(bladeTime - Time.deltaTime * bladeDrain, 0, 1);
         }
     }
     private IEnumerator GroundSpawner()

@@ -7,6 +7,9 @@ TagManager:
   - Parent
   - Powerbar
   - BladeTime
+  - Button
+  - Button2
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - 
   - Sliceable
   - PostProcessing
-  - 
+  - Obstacle
   - 
   - 
   - 

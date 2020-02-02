@@ -169,8 +169,8 @@
     <Compile Include="Assets\Scripts\OldCut\ObjectManager.cs" />
     <Compile Include="Assets\Scripts\OldCut\ScreenLineRenderer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\RemoveCollider.cs" />
     <Compile Include="Assets\Scripts\SceneMg.cs" />
+    <Compile Include="Assets\Scripts\Settings\CleanUp.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\StatusUpdate.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
