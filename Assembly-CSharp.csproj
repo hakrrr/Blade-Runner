@@ -146,8 +146,6 @@
     <Compile Include="Assets\Scripts\Character\BasicAvatarController.cs" />
     <Compile Include="Assets\Scripts\Character\BasicAvatarModel.cs" />
     <Compile Include="Assets\Scripts\Character\KinectPointManAvatarModel.cs" />
-    <Compile Include="Assets\Scripts\Character\NinjaController.cs" />
-    <Compile Include="Assets\Scripts\Character\PlayerControllerRigidBody.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerControllerTransform.cs" />
     <Compile Include="Assets\Scripts\cursor1.cs" />
     <Compile Include="Assets\Scripts\Cutting\Blade.cs" />
@@ -157,6 +155,7 @@
     <Compile Include="Assets\Scripts\Gamemanager.cs" />
     <Compile Include="Assets\Scripts\GestureSourceManager.cs" />
     <Compile Include="Assets\Scripts\GroundSpawn.cs" />
+    <Compile Include="Assets\Scripts\MainMenuNew.cs" />
     <Compile Include="Assets\Scripts\Obstacle\FlyingObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\GroundObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Hull.cs" />
@@ -176,7 +175,6 @@
     <Compile Include="Assets\Scripts\StatusUpdate.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckSFXVolume.cs" />
-    <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\MainMenuNew.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\OptionsMenuNew.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\ResetDemo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

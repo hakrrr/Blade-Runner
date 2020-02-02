@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class MainMenuNew : MonoBehaviour {
 
@@ -14,7 +15,6 @@ public class MainMenuNew : MonoBehaviour {
     public Light light;
     public bool switchhand=false;
 
-
     void Update()
     {
         if(switchhand==false)
@@ -22,6 +22,7 @@ public class MainMenuNew : MonoBehaviour {
         else
         cursor.transform.localPosition = Vector3.Lerp(cursor.transform.localPosition, new Vector3(kinectrightHand.transform.position.x * 20, kinectrightHand.transform.position.y * 20, 16.24f), 0.5f);
     }
+
     [Header("Loaded Scene")]
 	[Tooltip("The name of the scene in the build settings that will load")]
 	public string sceneName = ""; 
@@ -54,17 +55,16 @@ public class MainMenuNew : MonoBehaviour {
     [Header("LOADING SCREEN")]
 	public GameObject loadingMenu;
 	public Slider loadBar;
-	public TMP_Text finishedLoadingText;
 
-	void Start(){
+	public TMP_Text finishedLoadingText;
+    public SceneMg sceneManager;
+
+    void Start(){
 		CameraObject = transform.GetComponent<Animator>();
-		_scenesManager = lvlchanger.GetComponent<SceneMg>();
 	}
 
-	public GameObject lvlchanger;
-	private SceneMg _scenesManager;
 	public void  PlayCampaign (){
-		_scenesManager.FadeToScene(1);
+        sceneManager.FadeToScene(1);
 	}
 	
 	public void  PlayCampaignMobile (){
@@ -87,11 +87,10 @@ public class MainMenuNew : MonoBehaviour {
 	}
     public void Position2()
     {
-        CameraObject.SetFloat("Animate", 1);
+        transform.DORotate(Vector3.up * 90f, 0.5f);
     }
-
     public void Position1() {
-        CameraObject.SetFloat("Animate", 0);
+        transform.DORotate(Vector3.zero, 0.5f);
     }
     public void Setright()
     {
@@ -128,16 +127,18 @@ public class MainMenuNew : MonoBehaviour {
 		mainMenu.gameObject.SetActive(false);
 	}
 
-	public void  Yes (){
-		Application.Quit();
+	public void Yes (){
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
 	}
     public void No()
     {
         exitMenu.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(true);
-        playMenu.gameObject.SetActive(true);
     }
-
     public void ToCalibration()
     {
         CameraObject.SetBool("Cali", true);
