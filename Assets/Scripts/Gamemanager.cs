@@ -7,7 +7,8 @@ public class Gamemanager : MonoBehaviour
 {
 
     static Gamemanager current;
-    [SerializeField] private GameObject[] groundObstacle;
+    [SerializeField] private GameObject[] smallObst;
+    [SerializeField] private GameObject[] bigObst;
     [SerializeField] private GameObject[] airObstacle;
     [SerializeField] private Transform[] terrains;
     [SerializeField] private PlayerController player;
@@ -18,7 +19,7 @@ public class Gamemanager : MonoBehaviour
     public float powerDrain = 0.06f;
     public float bladeCharge = 0.5f;
     public float bladeDrain = 0.5f;
-    public float groundSpeed = 20f;
+    private const float groundSpeed = 17.5f;
 
     private float power;
     private float bladeTime;
@@ -38,7 +39,8 @@ public class Gamemanager : MonoBehaviour
     {
         if (spawn)
         {
-            StartCoroutine(GroundSpawner());
+            StartCoroutine(SmallSpawner());
+            StartCoroutine(BigSpawner());
             StartCoroutine(AirSpawner());
         }
     }
@@ -61,7 +63,7 @@ public class Gamemanager : MonoBehaviour
             bladeTime = Mathf.Clamp(bladeTime - Time.deltaTime * bladeDrain, 0, 1);
         }
     }
-    private IEnumerator GroundSpawner()
+    private IEnumerator SmallSpawner()
     {
         int counter = 0;
         while (true)
@@ -69,11 +71,22 @@ public class Gamemanager : MonoBehaviour
             if (counter == 30)
                 maxSpawnTime /= 2;
             yield return new WaitWhile(() => hand.activeSelf || !spawn);
-            yield return new WaitForSeconds(Random.Range(0f, maxSpawnTime));
-            Vector3 spawnPos = new Vector3(Random.Range(-1.45f, 4f), -4.7f, 100f);
+            yield return new WaitForSeconds(Random.Range(0.3f, maxSpawnTime));
+            Vector3 spawnPos = new Vector3(Random.Range(-2.75f, 4f), -4.7f, 100f);
             Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360f), 0);
-            Instantiate(groundObstacle[Random.Range(0, groundObstacle.Length)], spawnPos, spawnRot);
+            Instantiate(smallObst[Random.Range(0, smallObst.Length)], spawnPos, spawnRot);
             ++counter;
+        }
+    }    
+    private IEnumerator BigSpawner()
+    {
+        while (true)
+        {
+            yield return new WaitWhile(() => hand.activeSelf || !spawn);
+            yield return new WaitForSeconds(Random.Range(2f, maxSpawnTime * 1.5f));
+            Vector3 spawnPos = new Vector3(Random.Range(-2.75f, 4f), -4.7f, 100f);
+            Quaternion spawnRot = Quaternion.Euler(0, Random.Range(0, 360f), 0);
+            Instantiate(bigObst[Random.Range(0, bigObst.Length)], spawnPos, spawnRot);
         }
     }
     private IEnumerator AirSpawner()

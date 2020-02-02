@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4598334504398091186}
   - component: {fileID: 4331437077217578845}
   - component: {fileID: 6023566694568148638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hydrant
-  m_TagString: Parent
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

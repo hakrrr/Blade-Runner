@@ -29,12 +29,13 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem[] m_SpeedParticles;
     private CinemachineComposer m_CineComposer;
     private CinemachineTransposer m_CineTransposer;
+    private BoxCollider m_Coll;
     private float m_startX = 0;
     private float m_velocity = 1f;
     private bool m_bladeRdy = false;
     private bool m_locked = false;
 
-    private const float m_powerMult = 0.01f;
+    private const float m_powerMult = 0.003f;
 
     /// <summary>
     /// SpeedParticles Index 0 = SwordLight, 1 = Warpstr, 2 = FootLight
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_CineComposer = m_Cmvs.GetCinemachineComponent<CinemachineComposer>();
         m_CineTransposer = m_Cmvs.GetCinemachineComponent<CinemachineTransposer>();
+        m_Coll = GetComponent<BoxCollider>();
         m_SpeedParticles = GetComponentsInChildren<ParticleSystem>(true);
     }
     private void Start()
@@ -107,24 +109,26 @@ public class PlayerController : MonoBehaviour
     {
         if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeL"))
         {
-            if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
+            if (m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .5f)
             {
-                transform.DOMoveX(Mathf.Clamp(m_startX - .75f, -1.75f, 2.75f), 0.3f);
-                DOVirtual.Float(m_velocity, .7f, 0.1f, (float x) => m_velocity = x);
+                transform.DOMoveX(Mathf.Clamp(m_startX - 1.75f, -1.75f, 2.75f), 0.3f);
+                DOVirtual.Float(m_velocity, .5f, 0.1f, (float x) => m_velocity = x);
             }
             EnableFootPart(false);
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("DodgeR"))
         {
-            if(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .4f)
+            if(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .5f)
             {
-                transform.DOMoveX(Mathf.Clamp(m_startX + .75f, -1.75f, 2.75f), 0.3f);
-                DOVirtual.Float(m_velocity, .7f, 0.1f, (float x) => m_velocity = x);
+                transform.DOMoveX(Mathf.Clamp(m_startX + 1.75f, -1.75f, 2.75f), 0.3f);
+                DOVirtual.Float(m_velocity, .5f, 0.1f, (float x) => m_velocity = x);
             }
             EnableFootPart(false);
         }
         else if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
+            m_Coll.enabled = 
+                !(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime < .7f);
             EnableFootPart(false);
         }
         else if (m_Animator.GetBool("BladeMode"))

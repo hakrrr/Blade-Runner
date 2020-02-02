@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5362138204543996596}
   - component: {fileID: 5139293808676416484}
   - component: {fileID: 124346691605264312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SphereWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

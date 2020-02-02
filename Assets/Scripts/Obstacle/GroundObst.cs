@@ -7,7 +7,7 @@ using DG.Tweening;
 public class GroundObst : MonoBehaviour
 {
 
-    [SerializeField] private float m_Speed;
+    private float m_Speed = 17.5f;
     private Vector3 m_Velocity;
     private PlayerController m_Controller;
     private Rigidbody m_Rigidbody;
