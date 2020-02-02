@@ -7,6 +7,7 @@ This project requires the CyperCity Model form the Unity asset store. Link can b
 
 Setting the Game up:
 Download the texture-pack from the following link:
+https://drive.google.com/drive/folders/1PrIy44Y0u8jHKAH-pBUTz82tWgvaFjnX?usp=sharing
 
 Clone the project and insert the texture-pack into Assets/Cyperpunk (BEFORE opening it in Unity)
 Start Unity
