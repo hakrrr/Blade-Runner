@@ -5,6 +5,13 @@ Simple Endless-Runner with cutting features via kinect sensors
 
 This project requires the CyperCity Model form the Unity asset store. Link can be found below.
 
+Setting the Game up:
+Download the Texturepack from the following link:
+
+Clone the project and insert the Texture into Assets/Cyperpunk (BEFORE opening it in Unity)
+Start Unity
+
+
 Credits for models and Frameworks:
 
 Katana-model by person-x:
