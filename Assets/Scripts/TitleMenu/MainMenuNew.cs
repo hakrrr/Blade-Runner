@@ -13,11 +13,11 @@ public class MainMenuNew : MonoBehaviour {
     public Transform kinectrightHand;
     public GameObject cursor;
     public Light light;
-    public bool switchhand=false;
+    public bool switchhand = true;
 
     void Update()
     {
-        if(switchhand==false)
+        if(switchhand == false)
             cursor.transform.localPosition = Vector3.Lerp(cursor.transform.localPosition,new Vector3 (kinectleftHand.transform.position.x*20, kinectleftHand.transform.position.y*20, 16.24f),0.5f);
         else
         cursor.transform.localPosition = Vector3.Lerp(cursor.transform.localPosition, new Vector3(kinectrightHand.transform.position.x * 20, kinectrightHand.transform.position.y * 20, 16.24f), 0.5f);
@@ -57,10 +57,11 @@ public class MainMenuNew : MonoBehaviour {
 	public Slider loadBar;
 
 	public TMP_Text finishedLoadingText;
-    public SceneMg sceneManager;
+    private SceneMg sceneManager;
 
     void Start(){
 		CameraObject = transform.GetComponent<Animator>();
+        sceneManager = GameObject.Find("SceneMg").GetComponent<SceneMg>();
 	}
 
 	public void  PlayCampaign (){

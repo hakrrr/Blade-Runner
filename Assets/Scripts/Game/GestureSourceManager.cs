@@ -7,8 +7,6 @@ using Microsoft.Kinect.VisualGestureBuilder;
 
 public class GestureSourceManager : MonoBehaviour
 {
-    //private readonly string dodgeL = "Dodge_Left";
-    //private readonly string dodgeR = "Dodge_Right";
     public delegate void GestureDetected(string name ,float conf);
     public event GestureDetected GestureDetectedEvent;
 
@@ -37,7 +35,7 @@ public class GestureSourceManager : MonoBehaviour
             vgbFrameReader.FrameArrived += GestureFrameArrived;
         }
 
-        var gestureDb = Path.Combine(Application.streamingAssetsPath, "Dodge000.gbd");
+        var gestureDb = Path.Combine(Application.streamingAssetsPath, "ASG000.gbd");
         using (VisualGestureBuilderDatabase database = VisualGestureBuilderDatabase.Create(gestureDb))
         {
             foreach (Gesture gesture in database.AvailableGestures)
@@ -47,7 +45,6 @@ public class GestureSourceManager : MonoBehaviour
             }
         }
     }
-
     private void Update()
     {
         if (!vgbFrameSource.IsTrackingIdValid)
@@ -55,7 +52,6 @@ public class GestureSourceManager : MonoBehaviour
             FindValidBody();
         }
     }
-
     void FindValidBody()
     {
         if (bodySrcMg != null)
@@ -74,7 +70,6 @@ public class GestureSourceManager : MonoBehaviour
             }
         }
     }
-
     public void SetBody(ulong id)
     {
         if (id > 0)
@@ -88,7 +83,6 @@ public class GestureSourceManager : MonoBehaviour
             vgbFrameReader.IsPaused = true;
         }
     }
-
     private void GestureFrameArrived(object sender, VisualGestureBuilderFrameArrivedEventArgs e)
     {
         VisualGestureBuilderFrameReference frameReference = e.FrameReference;
@@ -97,6 +91,7 @@ public class GestureSourceManager : MonoBehaviour
             if(frame != null)
             {
                 IDictionary<Gesture, DiscreteGestureResult> discreteResults = frame.DiscreteGestureResults;
+                IDictionary<Gesture, ContinuousGestureResult> continResults = frame.ContinuousGestureResults;
 
                 if(discreteResults != null)
                 {
@@ -108,9 +103,16 @@ public class GestureSourceManager : MonoBehaviour
                             discreteResults.TryGetValue(gesture, out result);
 
                             if(result != null)
-                            {
                                 GestureDetectedEvent(gesture.Name, result.Confidence);
-                            }
+                        }
+
+                        if(gesture.GestureType == GestureType.Continuous)
+                        {
+                            ContinuousGestureResult result = null;
+                            continResults.TryGetValue(gesture, out result);
+
+                            if (result != null)
+                                GestureDetectedEvent(gesture.Name, result.Progress);
                         }
                     }
                 }

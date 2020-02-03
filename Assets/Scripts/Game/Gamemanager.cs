@@ -30,7 +30,6 @@ public class Gamemanager : MonoBehaviour
     //Don't destroy objects
     private SceneMg sM;
     private Data data;
-
     private void Awake()
     {
         if (current != null && current != this)
@@ -54,7 +53,7 @@ public class Gamemanager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (power == 0f)
+        if (power <= 0f)
         {
             data.SetScore(score);
             sM.FadeToScene(2);
@@ -68,9 +67,7 @@ public class Gamemanager : MonoBehaviour
         }
 
         if (player.Velocity > 1.1f)
-        {
             bladeCharge = bladeCharge2 * 2f;
-        }
         else
             bladeCharge = bladeCharge2 / 2f;
             
@@ -79,12 +76,10 @@ public class Gamemanager : MonoBehaviour
         {
             power = Mathf.Clamp(power - Time.deltaTime * powerDrain, 0, 1);
             bladeTime = Mathf.Clamp(bladeTime + Time.deltaTime * bladeCharge, 0, 1);
-            score = Mathf.Clamp(Mathf.FloorToInt(Time.deltaTime * 100) + score, 0, 999999);
+            score = Mathf.Clamp(Mathf.FloorToInt(Time.deltaTime * 100 * player.Velocity) + score, 0, 999999);
         }
         else
-        {
             bladeTime = Mathf.Clamp(bladeTime - Time.deltaTime * bladeDrain, 0, 1);
-        }
     }
     private IEnumerator SmallSpawner()
     {

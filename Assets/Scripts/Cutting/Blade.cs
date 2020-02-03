@@ -37,9 +37,13 @@ public class Blade : MonoBehaviour
     {
         lastPosition = initPos;
         cam = GetComponent<DetectJoints>().CameraTrack;
-        //bladeTrail.SetActive(false);
     }
-    private void Update()
+    private void OnDisable()
+    {
+        bladeActive = false;
+        StopCoroutine(StartCut());
+    }
+    private void FixedUpdate()
     {
         float velocity = (handTf.position - lastPosition).magnitude * Time.deltaTime * 1000f;
         if(!mouseDrawn && !bladeActive && lastPosition != initPos && velocity > minBladeSpeed)
@@ -72,9 +76,7 @@ public class Blade : MonoBehaviour
         Vector3 A = mouseDrawn ? Input.mousePosition : cam.WorldToScreenPoint(handTf.position);
 
         //Activate Blade; Bladetime == bladeDur
-        //bladeTrail.SetActive(true);
         yield return new WaitForSeconds(bladeDur);
-        //bladeTrail.SetActive(false);
         bladeActive = false;
         Vector3 B = mouseDrawn ? Input.mousePosition : cam.WorldToScreenPoint(handTf.position);
 

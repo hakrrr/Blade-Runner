@@ -14,8 +14,11 @@ public class PlayerController : MonoBehaviour
     public delegate void UpdatePower(float p, int s);
     public UpdatePower OnUpdatePower;
 
-    private readonly string dodgeL = "Dodge_Right";
-    private readonly string dodgeR = "Dodge_Left";
+    private const string moveLeft = "MoveLeft_Left";
+    private const string moveRight = "MoveRight_Right";
+    private const string bladeM = "BladeMode";
+    private const string jump = "Jump";
+    private const string run = "Running";
     
     [SerializeField] private bool Pc;
     [SerializeField] private GameObject m_GestureMg;
@@ -35,7 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool m_bladeRdy = false;
     private bool m_locked = false;
 
-    private const float m_powerMult = 0.003f;
+    private float m_horAxis = 0f;
+    private const float m_powerMult = 0.01f;
 
     /// <summary>
     /// SpeedParticles Index 0 = SwordLight, 1 = Warpstr, 2 = FootLight
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             GetComponent<CinemachineImpulseSource>().GenerateImpulse();
-            OnUpdatePower?.Invoke(-0.4f, 0);
+            OnUpdatePower?.Invoke(-0.2f, 0);
         }
     }
     private void PCInput()
@@ -85,17 +89,15 @@ public class PlayerController : MonoBehaviour
             m_locked = true;
             m_Animator.SetTrigger("Jump");
         }
-        else if (Input.GetKeyDown("d"))
+        else if (Input.GetKey("d"))
         {
-            m_locked = true;
-            m_startX = transform.position.x;
-            m_Animator.SetTrigger("DodgeR");
+            if(transform.position.x <= 2.75f)
+                transform.position += Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * 3f;
         }
-        else if (Input.GetKeyDown("a"))
+        else if (Input.GetKey("a"))
         {
-            m_locked = true;
-            m_startX = transform.position.x;
-            m_Animator.SetTrigger("DodgeL");
+            if (transform.position.x >= -1.75f)
+                transform.position += Vector3.right * Time.deltaTime * Input.GetAxis("Horizontal") * 3f;
         }
         else if (Input.GetKey("w"))
         {
@@ -144,16 +146,41 @@ public class PlayerController : MonoBehaviour
     public float Velocity { get { return m_velocity; }}
     private void GestureDetectedHandler(string name, float conf)
     {
-        if (!m_locked &&m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running") && conf > 0.5f)
+        if (!m_locked && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Running"))
         {
-            if (name.Equals(dodgeL))
+            if(name == moveRight && conf > 0.2f)
+                if (transform.position.x <= 2.75f && conf > 0.5f)
+                {
+                    DOVirtual.Float(m_horAxis, 1f, 0.1f, (float x) => m_horAxis = x);
+                    transform.position += Vector3.right * Time.deltaTime * m_horAxis * 5f;
+                }
+
+            if(name == moveLeft && conf > 0.2f)
+                if (transform.position.x >= -1.75f)
+                {
+                    DOVirtual.Float(m_horAxis, -1f, 0.1f, (float x) => m_horAxis = x);
+                    transform.position += Vector3.right * Time.deltaTime * m_horAxis * 5f;
+                }
+
+            if(m_bladeRdy && name == bladeM && conf > 0.2f)
             {
-                m_Animator.SetTrigger("DodgeL");
-            }else if (name.Equals(dodgeR))
-            {
-                m_Animator.SetTrigger("DodgeR");
+                m_locked = true;
+                m_Animator.SetBool("BladeMode", true);
             }
-            //Todo: Draw Katana
+
+            if(name == jump && conf > 0.6f)
+            {
+                m_locked = true;
+                m_Animator.SetTrigger("Jump");
+            }
+
+            //if(name == run && conf > 0.5f)
+            //    m_Animator.SetBool("Running", true);
+            //else if(name == run)
+            //{
+            //    Debug.Log(conf);
+            //    m_Animator.SetBool("Running", false);
+            //}
         }
     }
     #region Mode
@@ -178,6 +205,7 @@ public class PlayerController : MonoBehaviour
         else
             EnableFootPart(true);
 
+        transform.rotation = Quaternion.Euler(0, 30f * Input.GetAxis("Horizontal"), 0);
         //Note: Animation of Run should be dampened
         m_Animator.SetFloat("RunningMult", m_velocity);
     }

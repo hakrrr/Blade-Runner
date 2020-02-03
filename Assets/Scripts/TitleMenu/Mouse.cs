@@ -10,15 +10,11 @@ public class Mouse : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        
-        if (other.gameObject.tag == "Button") {
+        if (other.gameObject.tag == "Button")
             StartCoroutine(ColorChange(other.gameObject));
-        }
+        
         else if (other.gameObject.tag == "Button2")
-        {
             StartCoroutine(ColorChange2(other.gameObject));
-        }
-
     }
     private void OnTriggerExit(Collider other)
     {
@@ -37,7 +33,6 @@ public class Mouse : MonoBehaviour
     }
     IEnumerator ColorChange(GameObject a)
     { 
-
         while (a.GetComponent<Image>().color.a <= 1f)
         {
             ColorAlpha +=0.125f/2;
@@ -49,7 +44,6 @@ public class Mouse : MonoBehaviour
     }
     IEnumerator ColorChange2(GameObject a)
     {
-
         while (a.GetComponent<Image>().color.a <= 0.3f)
         {
             ColorAlpha += 0.125f / 8;

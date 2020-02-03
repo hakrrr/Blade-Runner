@@ -156,6 +156,7 @@
     <Compile Include="Assets\Scripts\Game\GroundSpawn.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Game\StatusUpdate.cs" />
+    <Compile Include="Assets\Scripts\GameOver\CursorScript.cs" />
     <Compile Include="Assets\Scripts\GameOver\GameOverStat.cs" />
     <Compile Include="Assets\Scripts\Obstacle\FlyingObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\GroundObst.cs" />

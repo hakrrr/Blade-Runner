@@ -8,13 +8,17 @@ public class SceneMg : MonoBehaviour
     static SceneMg curr;
     public Animator animator;
     private int SceneId;
+    private int prevSceneId;
 
     private void Awake()
     {
         if (curr != null && curr != this)
-            Destroy(this);
-        curr = this;
-        DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+        else
+        {
+            curr = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
     private void OnEnable()
     {
@@ -25,17 +29,20 @@ public class SceneMg : MonoBehaviour
         if(SceneId != id)
         {
             SceneId = id;
+            prevSceneId = SceneManager.GetActiveScene().buildIndex;
             animator.SetTrigger("FadeOut");
         }
     }
-    public void OnFadeFinished()
+
+    public void OnFadeOut()
     {
         SceneManager.LoadScene(SceneId);
     }
     private void OnSceneSwitch(Scene scene, LoadSceneMode mode)
     {
-        if(scene.buildIndex != 0 && scene.isLoaded)
+        if(scene.buildIndex != prevSceneId && scene.isLoaded)
             animator.SetTrigger("FadeIn");
         Time.timeScale = 1f;
     }
+
 }
