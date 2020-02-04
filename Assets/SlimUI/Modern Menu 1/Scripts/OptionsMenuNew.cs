@@ -7,10 +7,12 @@ public class OptionsMenuNew : MonoBehaviour {
 
 	public enum Platform {Desktop, Mobile};
 	public Platform platform;
-	// toggle buttons
-	[Header("MOBILE SETTINGS")]
-	public GameObject mobileSFXtext;
-	public GameObject mobileMusictext;
+
+    #region default
+    // toggle buttons
+    [Header("MOBILE SETTINGS")]
+	public GameObject leftLine;
+	public GameObject rightLine;
 	public GameObject mobileShadowofftextLINE;
 	public GameObject mobileShadowlowtextLINE;
 	public GameObject mobileShadowhightextLINE;
@@ -41,14 +43,15 @@ public class OptionsMenuNew : MonoBehaviour {
 
 	[Header("CONTROLS SETTINGS")]
 	public GameObject invertmousetext;
+    #endregion
+    // sliders
+    public GameObject musicSlider;
 
-	// sliders
-	public GameObject musicSlider;
-
-
+    private Data data;
 	private float sliderValue = 0.0f;
 
 	public void  Start (){
+        data = GameObject.Find("Data").GetComponent<Data>();
 		// check difficulty
 		if(PlayerPrefs.GetInt("NormalDifficulty") == 1){
 			difficultynormaltextLINE.gameObject.SetActive(true);
@@ -77,11 +80,9 @@ public class OptionsMenuNew : MonoBehaviour {
 	}
 
 
-
 	public void MusicSlider (){
 		PlayerPrefs.SetFloat("MusicVolume", sliderValue);
 	}
-
 
 	// the playerprefs variable that is checked to enable hud while in game
 	public void  ShowHUD (){
@@ -92,29 +93,6 @@ public class OptionsMenuNew : MonoBehaviour {
 		else if(PlayerPrefs.GetInt("ShowHUD")==1){
 			PlayerPrefs.SetInt("ShowHUD",0);
 			showhudtext.GetComponent<TMP_Text>().text = "off";
-		}
-	}
-
-	// the playerprefs variable that is checked to enable mobile sfx while in game
-	public void MobileSFXMute (){
-		if(PlayerPrefs.GetInt("Mobile_MuteSfx")==0){
-			PlayerPrefs.SetInt("Mobile_MuteSfx",1);
-			mobileSFXtext.GetComponent<TMP_Text>().text = "on";
-		}
-		else if(PlayerPrefs.GetInt("Mobile_MuteSfx")==1){
-			PlayerPrefs.SetInt("Mobile_MuteSfx",0);
-			mobileSFXtext.GetComponent<TMP_Text>().text = "off";
-		}
-	}
-
-	public void MobileMusicMute (){
-		if(PlayerPrefs.GetInt("Mobile_MuteMusic")==0){
-			PlayerPrefs.SetInt("Mobile_MuteMusic",1);
-			mobileMusictext.GetComponent<TMP_Text>().text = "on";
-		}
-		else if(PlayerPrefs.GetInt("Mobile_MuteMusic")==1){
-			PlayerPrefs.SetInt("Mobile_MuteMusic",0);
-			mobileMusictext.GetComponent<TMP_Text>().text = "off";
 		}
 	}
 
@@ -133,19 +111,28 @@ public class OptionsMenuNew : MonoBehaviour {
 	public void  NormalDifficulty (){
 		difficultyhardcoretextLINE.gameObject.SetActive(false);
 		difficultynormaltextLINE.gameObject.SetActive(true);
-		PlayerPrefs.SetInt("NormalDifficulty",1);
-		PlayerPrefs.SetInt("HardCoreDifficulty",0);
+        data.SetPlatform(true);
 	}
 
 	public void  HardcoreDifficulty (){
 		difficultyhardcoretextLINE.gameObject.SetActive(true);
 		difficultynormaltextLINE.gameObject.SetActive(false);
-		PlayerPrefs.SetInt("NormalDifficulty",0);
-		PlayerPrefs.SetInt("HardCoreDifficulty",1);
-	}
+        data.SetPlatform(false);
+    }
 
-
-	public void vsync (){
+    public void TriggerLeft()
+    {
+        leftLine.SetActive(true);
+        rightLine.SetActive(false);
+        data.SetHand(false);
+    }
+    public void TriggerRight()
+    {
+        leftLine.SetActive(false);
+        rightLine.SetActive(true);
+        data.SetHand(true);
+    }
+    public void vsync (){
 		if(QualitySettings.vSyncCount == 0){
 			QualitySettings.vSyncCount = 1;
 			vsynctext.GetComponent<TMP_Text>().text = "on";

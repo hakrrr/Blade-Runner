@@ -5,9 +5,11 @@ using UnityEngine;
 public class Data : MonoBehaviour
 {
     public static Data curr;
+    public bool hand;
+   
     private int highscore;
     private int score;
-    private bool pc = true;
+    private bool pc = false;
 
     private void Awake()
     {
@@ -16,7 +18,7 @@ public class Data : MonoBehaviour
 
         curr = this;
         DontDestroyOnLoad(gameObject);
-        //Cursor.visible = false;
+        Cursor.visible = false;
     }
     public bool Pc { get { return pc; } }
     public Vector2 Score{get { return new Vector2(highscore, score); }}
@@ -25,5 +27,15 @@ public class Data : MonoBehaviour
         score = s;
         if (score > highscore)
             highscore = score;
+    }
+
+    public void SetPlatform(bool OnPc)
+    {
+        pc = OnPc;
+    }
+
+    public void SetHand(bool right)
+    {
+        hand = right;
     }
 }

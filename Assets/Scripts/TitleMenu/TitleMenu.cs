@@ -40,10 +40,10 @@ public class TitleMenu : MonoBehaviour {
     }
 
     #region OnClickEvent
-    public void  PlayCampaign (){
+    public void PlayCampaign(){
         sceneManager.FadeToScene(1);
 	}
-	public void  ReturnMenu (){
+	public void ReturnMenu(){
 		exitMenu.gameObject.SetActive(false);
 		mainMenu.gameObject.SetActive(true);
 	}
