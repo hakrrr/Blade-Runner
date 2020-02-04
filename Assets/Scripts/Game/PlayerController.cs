@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private const string jump = "Jump";
     private const string run = "Running";
     
-    [SerializeField] private bool Pc;
+
     [SerializeField] private GameObject m_GestureMg;
     [SerializeField] private GameObject m_Hand;
     [SerializeField] private Gamemanager m_Gm;
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private float m_velocity = 1f;
     private bool m_bladeRdy = false;
     private bool m_locked = false;
+    private bool Pc;
 
     private float m_horAxis = 0f;
     private const float m_powerMult = 0.01f;
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
         m_CineTransposer = m_Cmvs.GetCinemachineComponent<CinemachineTransposer>();
         m_Coll = GetComponent<BoxCollider>();
         m_SpeedParticles = GetComponentsInChildren<ParticleSystem>(true);
+        Pc = GameObject.Find("Data").GetComponent<Data>().Pc;
     }
     private void Start()
     {

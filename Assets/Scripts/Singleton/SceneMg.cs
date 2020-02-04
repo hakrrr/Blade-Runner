@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class SceneMg : MonoBehaviour
 {
     static SceneMg curr;
-    public Animator animator;
-    private int SceneId;
+    private Animator animator;
+    private int sceneId;
     private int prevSceneId;
 
     private void Awake()
@@ -17,6 +17,7 @@ public class SceneMg : MonoBehaviour
         else
         {
             curr = this;
+            animator = GetComponent<Animator>();
             DontDestroyOnLoad(gameObject);
         }
     }
@@ -26,17 +27,16 @@ public class SceneMg : MonoBehaviour
     }
     public void FadeToScene(int id)
     {
-        if(SceneId != id)
+        if(sceneId != id)
         {
-            SceneId = id;
+            sceneId = id;
             prevSceneId = SceneManager.GetActiveScene().buildIndex;
             animator.SetTrigger("FadeOut");
         }
     }
-
     public void OnFadeOut()
     {
-        SceneManager.LoadScene(SceneId);
+        SceneManager.LoadScene(sceneId);
     }
     private void OnSceneSwitch(Scene scene, LoadSceneMode mode)
     {

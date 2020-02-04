@@ -79,7 +79,7 @@ public class Slice : MonoBehaviour
     }
     private void InitSlice()
     {
-        Collider [] hits = Physics.OverlapBox(plane.position, new Vector3(sliceRadius, 0.1f, sliceRadius), 
+        Collider [] hits = Physics.OverlapBox(plane.position, new Vector3(sliceRadius, 0.01f, sliceRadius), 
             plane.rotation, layerMask);
 
         if (hits.Length <= 0) return;

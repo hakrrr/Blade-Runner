@@ -5,7 +5,6 @@ using UnityEngine;
 public class Blade : MonoBehaviour
 {
     [SerializeField] private GameObject trackedHand;
-    [SerializeField] private bool mouseDrawn;
 
     //Blade is Publisher for Event OnLineDrawn
     //delegate is a "pointer" to a function and specifies the listener function's signature
@@ -17,21 +16,21 @@ public class Blade : MonoBehaviour
     private readonly Vector3 initPos = new Vector3(0, -20f, -10f);
 
     private Camera cam;
-    //private GameObject bladeTrail;
     private DetectJoints detectJoints;
     private Transform handTf;
     private Vector3 lastPosition;
     private bool bladeActive = false;
+    private bool mouseDrawn;
+
 
     private void Awake()
     {
         handTf = trackedHand.GetComponent<Transform>();
         detectJoints = GetComponent<DetectJoints>();
-        //bladeTrail = transform.GetChild(0).gameObject;
+        mouseDrawn = GameObject.Find("Data").GetComponent<Data>();
+
         if (mouseDrawn)
-        {
             detectJoints.enabled = false;
-        }
     }
     private void OnEnable()
     {
@@ -43,7 +42,8 @@ public class Blade : MonoBehaviour
         bladeActive = false;
         StopCoroutine(StartCut());
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
         float velocity = (handTf.position - lastPosition).magnitude * Time.deltaTime * 1000f;
         if(!mouseDrawn && !bladeActive && lastPosition != initPos && velocity > minBladeSpeed)

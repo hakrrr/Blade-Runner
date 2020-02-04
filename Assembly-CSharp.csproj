@@ -146,6 +146,7 @@
     <Compile Include="Assets\Scripts\Character\BasicAvatarModel.cs" />
     <Compile Include="Assets\Scripts\Character\KinectPointManAvatarModel.cs" />
     <Compile Include="Assets\Scripts\Character\PlayerControllerTransform.cs" />
+    <Compile Include="Assets\Scripts\Clean.cs" />
     <Compile Include="Assets\Scripts\Cutting\Blade.cs" />
     <Compile Include="Assets\Scripts\Cutting\DetectJoints.cs" />
     <Compile Include="Assets\Scripts\Cutting\Slice.cs" />
@@ -161,12 +162,10 @@
     <Compile Include="Assets\Scripts\Obstacle\FlyingObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\GroundObst.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Hull.cs" />
-    <Compile Include="Assets\Scripts\Settings\CleanUp.cs" />
     <Compile Include="Assets\Scripts\Singleton\Data.cs" />
     <Compile Include="Assets\Scripts\Singleton\SceneMg.cs" />
-    <Compile Include="Assets\Scripts\TitleMenu\MainMenuNew.cs" />
-    <Compile Include="Assets\Scripts\TitleMenu\Mouse.cs" />
     <Compile Include="Assets\Scripts\TitleMenu\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\TitleMenu\TitleMenu.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckMusicVolume.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\CheckSFXVolume.cs" />
     <Compile Include="Assets\SlimUI\Modern Menu 1\Scripts\OptionsMenuNew.cs" />
