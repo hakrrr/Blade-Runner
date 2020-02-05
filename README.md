@@ -6,7 +6,7 @@ A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
 ## Demo
 
-![Movies & TV 2_5_2020 3_35_21 AM](https://ibb.co/QMS3S4F)
+![Movies & TV 2_5_2020 3_35_21 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_35_21%20AM.png)
 
 ![Movies & TV 2_5_2020 3_35_25 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_35_25 AM.png)
 
