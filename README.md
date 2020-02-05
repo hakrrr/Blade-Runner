@@ -1,6 +1,6 @@
 # Blade Runner
 
-A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
+A Self-made Endless Runner Game for Windows PC and Microsoft Kinect.
 
 
 ## Demo
@@ -18,12 +18,12 @@ A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
 ## Gameplay
 
-Blade Runner is a traditional endless-runner game. The player’s goal is to navigate through the city, while sustaining his gradually decreasing power-charge. In order to achieve this, he has multiple different tasks to fulfill. 
+Blade Runner is an Endless-Runner game with a slight twist. The player’s goal is to navigate through the city, while sustaining his gradually decreasing power-charge. In order to achieve that, he has multiple different tasks to fulfill. 
 
 One being, avoiding collision with obstacles, using the actions: 
 
-1. Move Left & Right
-2. Jump
+	1. Move Left & Right
+	2. Jump
 
 The second being, cutting close objects to charge his power. The amount of charge will depend on the hits one manages to land. 
 
