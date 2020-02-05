@@ -41,13 +41,17 @@ public class CursorScript : MonoBehaviour
         if (pc)
         {
             Vector3 local = Input.mousePosition; local.z = screenDist;
-            transform.position = CameraTrack.ScreenToWorldPoint(local);
+            transform.position = CameraTrack.ScreenToWorldPoint(local + 
+                new Vector3(1f, -1f, 0) * 20);
         }
         else
             TrackJoint();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if(collision.name == "MusicSlider")
+            return;
+
         time += Time.deltaTime;
         collision.GetComponent<Image>().color -= new Color(0, 0, 0, Time.deltaTime);
         if (!locked && time >= 1f)
@@ -66,12 +70,18 @@ public class CursorScript : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.name == "MusicSlider")
+            return;
         time = 0; locked = false;
         Color local = collision.GetComponent<Image>().color; local.a = 1;
         collision.GetComponent<Image>().color = local;
     }
     private void OnTriggerStay(Collider collision)
     {
+        if (collision.name == "MusicSlider")
+            return;
+
+
         if (collision.gameObject.layer == 8 || locked)
             return;
 
@@ -96,6 +106,9 @@ public class CursorScript : MonoBehaviour
     }
     private void OnTriggerExit(Collider collision)
     {
+        if (collision.name == "MusicSlider")
+            return;
+
         if (collision.gameObject.layer == 8)
             return;
         time = 0; locked = false;

@@ -9,7 +9,7 @@ public class Data : MonoBehaviour
    
     private int highscore;
     private int score;
-    private bool pc = false;
+    private bool pc = true;
 
     private void Awake()
     {

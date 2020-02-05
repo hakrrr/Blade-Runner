@@ -50,10 +50,12 @@ public class OptionsMenuNew : MonoBehaviour {
     private Data data;
 	private float sliderValue = 0.0f;
 
-	public void  Start (){
+    private void Awake()
+    {
         data = GameObject.Find("Data").GetComponent<Data>();
-		// check difficulty
-		if(PlayerPrefs.GetInt("NormalDifficulty") == 1){
+    }
+    public void Start(){
+		if(data.Pc){
 			difficultynormaltextLINE.gameObject.SetActive(true);
 			difficultyhardcoretextLINE.gameObject.SetActive(false);
 		}
@@ -74,12 +76,9 @@ public class OptionsMenuNew : MonoBehaviour {
 			tooltipstext.GetComponent<TMP_Text>().text = "on";
 		}
 	}
-
 	public void  Update (){
 		sliderValue = musicSlider.GetComponent<Slider>().value;
 	}
-
-
 	public void MusicSlider (){
 		PlayerPrefs.SetFloat("MusicVolume", sliderValue);
 	}

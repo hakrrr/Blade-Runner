@@ -27,7 +27,7 @@ public class Blade : MonoBehaviour
     {
         handTf = trackedHand.GetComponent<Transform>();
         detectJoints = GetComponent<DetectJoints>();
-        mouseDrawn = GameObject.Find("Data").GetComponent<Data>();
+        mouseDrawn = GameObject.Find("Data").GetComponent<Data>().Pc;
 
         if (mouseDrawn)
             detectJoints.enabled = false;
