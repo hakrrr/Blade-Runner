@@ -1,4 +1,4 @@
-### Blade Runner
+# Blade Runner
 
 A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
@@ -6,7 +6,15 @@ A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
 ## Demo
 
-(images)
+![Movies & TV 2_5_2020 3_35_21 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_35_21 AM.png)
+
+![Movies & TV 2_5_2020 3_35_25 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_35_25 AM.png)
+
+![Movies & TV 2_5_2020 3_36_35 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_35 AM.png)
+
+![Movies & TV 2_5_2020 3_36_38 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_38 AM.png)
+
+![Movies & TV 2_5_2020 3_36_32 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_32 AM.png)
 
 
 
@@ -20,6 +28,8 @@ One being, avoiding collision with obstacles, using the actions:
 2. Jump
 
 The second being, cutting close objects to charge his power. The amount of charge will depend on the hits one manages to land. 
+
+
 
 
 
@@ -43,9 +53,11 @@ The second being, cutting close objects to charge his power. The amount of charg
 
 
 
+
+
 ## Download
 
-Feel free to contact me, to get the game build provided. You can also set it up one your own, as described below.
+Feel free to contact me for a download link. You can also set it up one your own, as described below.
 
 ### Unity Setup:
 
@@ -53,6 +65,8 @@ Feel free to contact me, to get the game build provided. You can also set it up 
  	2. Download the Cyberpunk texture packet. (Included in the Cyberpunk asset pack. Link below) You can also contact me for a download link.
  	3. Insert the texture pack into Assets/Cyperpunk (before first launch in Unity to avoid bugs).
  	4. Start Unity and open the project.
+
+
 
 
 
