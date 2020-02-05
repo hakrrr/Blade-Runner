@@ -8,13 +8,13 @@ A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
 ![Movies & TV 2_5_2020 3_35_21 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_35_21%20AM.png)
 
-![Movies & TV 2_5_2020 3_35_25 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_35_25 AM.png)
+![Movies & TV 2_5_2020 3_35_25 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_35_25%20AM.png)
 
-![Movies & TV 2_5_2020 3_36_35 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_35 AM.png)
+![Movies & TV 2_5_2020 3_36_35 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_19%20AM.png)
 
-![Movies & TV 2_5_2020 3_36_38 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_38 AM.png)
+![Movies & TV 2_5_2020 3_36_38 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_32%20AM.png)
 
-![Movies & TV 2_5_2020 3_36_32 AM](C:\Users\James Li\Documents\GitHub\ASG19-20\Demo\Movies & TV 2_5_2020 3_36_32 AM.png)
+![Movies & TV 2_5_2020 3_36_32 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_38%20AM.png)
 
 
 
