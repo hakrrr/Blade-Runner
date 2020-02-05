@@ -10,11 +10,11 @@ A self-made Endless-Runner Game for Windows PC and Microsoft Kinect.
 
 ![Movies & TV 2_5_2020 3_35_25 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_35_25%20AM.png)
 
-![Movies & TV 2_5_2020 3_36_35 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_19%20AM.png)
+![Movies & TV 2_5_2020 3_36_35 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_38%20AM.png)
 
 ![Movies & TV 2_5_2020 3_36_38 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_32%20AM.png)
 
-![Movies & TV 2_5_2020 3_36_32 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_38%20AM.png)
+![Movies & TV 2_5_2020 3_36_32 AM](https://github.com/hakrrr/Blade-Runner/blob/master/Demo/Movies%20%26%20TV%202_5_2020%203_36_35%20AM.png)
 
 
 
