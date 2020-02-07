@@ -57,7 +57,7 @@ If you intend to extend or upgrade this project, just tell me and you can fork t
 
 ## Download
 
-Feel free to contact me for a download link. You can also set it up one your own, as described below.
+Feel free to contact me for a download link. You can also set it up on your own, as described below.
 
 ### Unity Setup:
 
