@@ -51,7 +51,9 @@ The second being, cutting close objects to charge his power. The amount of charg
 
 
 
+## Update & Extension
 
+If you intend to extend or upgrade this project, feel free to fork this project. 
 
 ## Download
 
