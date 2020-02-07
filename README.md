@@ -50,10 +50,10 @@ The second being, cutting close objects to charge his power. The amount of charg
 ​	Slicing: Hold left mouse button & drag into one direction(PC)/ Drag hand across the screen (Kinect)
 
 
-
 ## Update & Extension
 
-If you intend to extend or upgrade this project, feel free to fork this project. 
+If you intend to extend or upgrade this project, just tell me and you can fork the project.
+
 
 ## Download
 
