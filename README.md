@@ -60,9 +60,10 @@ If you intend to extend or upgrade this project, just tell me and you can fork t
 Feel free to contact me for a download link. You can also set it up on your own, as described below.
 
 ### Unity Setup:
-
+	
+	0. Unity version 2019.2.* is required for this project
 	1. Clone the GitHub project
- 	2. Download the Cyberpunk texture packet. (Included in the Cyberpunk asset pack. Link below) You can also contact me for a download link.
+ 	2. Download the Cyberpunk texture packet (Included in the asset pack, link below) You can also contact me for a download link.
  	3. Insert the texture pack into Assets/Cyperpunk (before first launch in Unity to avoid bugs).
  	4. Start Unity and open the project.
 
